@@ -197,9 +197,10 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
-            font-size: 1.2rem;
+            padding: 0;
         }
         .theme-toggle:hover { background: var(--text-color); color: var(--bg-color); }
+        .theme-toggle svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
  
         /* ── Hero ── */
         .hero {
@@ -751,7 +752,22 @@
             </a>
         </div>
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+                <svg id="moonIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sunIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
             <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
                 <span></span><span></span><span></span>
             </button>
@@ -1056,9 +1072,8 @@
     <section id="contact" class="section">
         <h2 class="section-title">Connect</h2>
         <div id="statusMsg" class="status-msg" role="alert"></div>
-        <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact">
-            <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkopyprj" method="POST">
+                <p style="display:none"><label>Don't fill this: <input name="_gotcha"></label></p>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1230,15 +1245,27 @@
         (function() {
             const html = document.documentElement;
             const themeToggle = document.getElementById('themeToggle');
+            const moonIcon = document.getElementById('moonIcon');
+            const sunIcon = document.getElementById('sunIcon');
             
             // Load saved theme or default to dark
             const savedTheme = localStorage.getItem('rb_theme') || 'dark';
+            const updateIcons = (theme) => {
+                if (theme === 'light') {
+                    moonIcon.style.display = 'block';
+                    sunIcon.style.display = 'none';
+                } else {
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'block';
+                }
+            };
+            
             if (savedTheme === 'light') {
                 html.setAttribute('data-theme', 'light');
-                themeToggle.textContent = '☀️';
+                updateIcons('light');
             } else {
                 html.removeAttribute('data-theme');
-                themeToggle.textContent = '🌙';
+                updateIcons('dark');
             }
             
             // Toggle theme on button click
@@ -1248,10 +1275,10 @@
                 
                 if (newTheme === 'light') {
                     html.setAttribute('data-theme', 'light');
-                    themeToggle.textContent = '☀️';
+                    updateIcons('light');
                 } else {
                     html.removeAttribute('data-theme');
-                    themeToggle.textContent = '🌙';
+                    updateIcons('dark');
                 }
                 
                 localStorage.setItem('rb_theme', newTheme);
@@ -1351,31 +1378,13 @@
             }
         }
  
-        // ── Contact form (AJAX Netlify) ──
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        // ── Contact form (Formspree) ──
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             var form = e.target;
             var status = document.getElementById('statusMsg');
             status.style.display = "block";
             status.className = "status-msg success";
             status.innerText = "TRANSMITTING...";
-            try {
-                var response = await fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(new FormData(form)).toString()
-                });
-                if (response.ok) {
-                    status.innerText = "MESSAGE RECEIVED. WE WILL CONTACT YOU SHORTLY.";
-                    form.reset();
-                } else {
-                    status.className = "status-msg error";
-                    status.innerText = "ERROR SENDING MESSAGE. PLEASE TRY AGAIN.";
-                }
-            } catch (error) {
-                status.className = "status-msg error";
-                status.innerText = "NETWORK ERROR. PLEASE CHECK YOUR CONNECTION.";
-            }
         });
     </script>
 </body>
