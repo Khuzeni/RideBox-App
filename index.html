@@ -8,14 +8,12 @@
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://ridebox.co.za/">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ridebox.co.za/">
     <meta property="og:title" content="RIDEBOX | Solar-Powered E-Hailing">
     <meta property="og:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
     <meta property="og:image" content="https://ridebox.co.za/ridebox-logo.png">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="RIDEBOX | Solar-Powered E-Hailing">
     <meta name="twitter:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
@@ -25,7 +23,6 @@
     <link rel="apple-touch-icon" href="ridebox-logo.png">
     <title>RIDEBOX | Solar-Powered E-Hailing</title>
 
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -194,6 +191,11 @@
             gap: 30px;
         }
 
+        /* Specific grid setup to ensure 4 team members display equally without wrapping weirdly */
+        .grid.team-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
         .card {
             padding: 60px 30px;
             border: 1px solid var(--border-color);
@@ -201,6 +203,12 @@
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             background: rgba(0,0,0,0.5);
+            /* Flex ensures interior content centers and all cards stretch to equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%; 
         }
 
         .card:hover, .card:focus {
@@ -212,7 +220,8 @@
         .card h3 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 900; transition: transform 0.3s; }
         .card:hover h3 { transform: scale(1.05); }
 
-        .card h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        .card p { text-align: center; }
 
         /* Modals */
         .modal {
@@ -243,6 +252,9 @@
         .modal h2 { text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px; }
         .modal p { margin-bottom: 20px; font-size: 1rem; opacity: 0.9; }
         .modal li { margin-bottom: 12px; padding-left: 15px; border-left: 1px solid var(--border-color); list-style: none; }
+        
+        .modal-email-link { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .modal-email-link:hover { border-bottom: 1px solid var(--accent-color); }
 
         /* Contact Section with Background Image */
         #contact {
@@ -297,6 +309,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) {
+            .grid.team-grid { grid-template-columns: repeat(2, 1fr); } /* Forces a perfect 2x2 square on tablets/laptops */
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -315,6 +332,7 @@
             .hero h1 { font-size: 3.5rem; }
             .section { padding: 60px 5%; }
             #contact { background-attachment: scroll; }
+            .grid.team-grid { grid-template-columns: 1fr; } /* Stack vertically on mobile */
         }
     </style>
 </head>
@@ -370,19 +388,21 @@
         </div>
 
         <h3 class="sub-heading">Core Team Members</h3>
-        <div class="grid">
+        <div class="grid team-grid">
             <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('reganModal')" onkeydown="if(event.key==='Enter')openModal('reganModal')"><h4>Regan Stevens</h4><p style="opacity: 0.6; font-size: 0.8rem;">PROJECT MANAGER</p></div>
             <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('jonathanModal')" onkeydown="if(event.key==='Enter')openModal('jonathanModal')"><h4>Jonathan Scott</h4><p style="opacity: 0.6; font-size: 0.8rem;">SUPERVISOR</p></div>
             <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('kyleModal')" onkeydown="if(event.key==='Enter')openModal('kyleModal')"><h4>Kyle Foster</h4><p style="opacity: 0.6; font-size: 0.8rem;">HEAD OF MARKETING</p></div>
+            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('tebogoModal')" onkeydown="if(event.key==='Enter')openModal('tebogoModal')"><h4>Tebogo Pii</h4><p style="opacity: 0.6; font-size: 0.8rem;">FRONT-END DEVELOPER</p></div>
         </div>
     </section>
 
-    <div id="dumisaneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="dumisaneModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('dumisaneModal')" aria-label="Close dialog">&times;</button><h2 id="dumisaneModalTitle">Dumisane Zikalala</h2><p>Born in Soweto, Dumisane overcame environmental challenges to graduate from CPUT. He co-founded Ridebox to leverage technology for social good.</p></div></div>
-    <div id="aluluthoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="aluluthoModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('aluluthoModal')" aria-label="Close dialog">&times;</button><h2 id="aluluthoModalTitle">Alulutho Mbangela</h2><p>Hailing from Port Elizabeth, Alu's vision for operational excellence was forged at CPUT alongside Dumisane.</p></div></div>
+    <div id="dumisaneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="dumisaneModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('dumisaneModal')" aria-label="Close dialog">&times;</button><h2 id="dumisaneModalTitle">Dumisane Zikalala</h2><p>Born in Soweto, Dumisane overcame environmental challenges to graduate from CPUT. He co-founded Ridebox to leverage technology for social good.</p><p><strong>Email:</strong> <a href="mailto:dumisane.zikalala@rideboxapp.com" class="modal-email-link">dumisane.zikalala@rideboxapp.com</a></p></div></div>
+    <div id="aluluthoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="aluluthoModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('aluluthoModal')" aria-label="Close dialog">&times;</button><h2 id="aluluthoModalTitle">Alulutho Mbangela</h2><p>Hailing from Port Elizabeth, Alu's vision for operational excellence was forged at CPUT alongside Dumisane.</p><p><strong>Email:</strong> <a href="mailto:alulutho@rideboxapp.com" class="modal-email-link">alulutho@rideboxapp.com</a></p></div></div>
 
-    <div id="reganModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reganModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('reganModal')" aria-label="Close dialog">&times;</button><h2 id="reganModalTitle">Regan Stevens</h2><p><strong>Project Manager:</strong> Managing timelines and technical vendor partnerships.</p></div></div>
-    <div id="jonathanModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="jonathanModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('jonathanModal')" aria-label="Close dialog">&times;</button><h2 id="jonathanModalTitle">Jonathan Scott</h2><p><strong>Supervisor:</strong> Overseeing day-to-day operations and high-level strategy.</p></div></div>
-    <div id="kyleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="kyleModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('kyleModal')" aria-label="Close dialog">&times;</button><h2 id="kyleModalTitle">Kyle Foster</h2><p><strong>Head of Marketing:</strong> Responsible for RIDEBOX brand identity and communications.</p></div></div>
+    <div id="reganModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reganModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('reganModal')" aria-label="Close dialog">&times;</button><h2 id="reganModalTitle">Regan Stevens</h2><p><strong>Project Manager:</strong> Managing timelines and technical vendor partnerships.</p><p><strong>Email:</strong> <a href="mailto:regan@rideboxapp.com" class="modal-email-link">regan@rideboxapp.com</a></p></div></div>
+    <div id="jonathanModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="jonathanModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('jonathanModal')" aria-label="Close dialog">&times;</button><h2 id="jonathanModalTitle">Jonathan Scott</h2><p><strong>Supervisor:</strong> Overseeing day-to-day operations and high-level strategy.</p><p><strong>Email:</strong> <a href="mailto:jonathan@rideboxapp.com" class="modal-email-link">jonathan@rideboxapp.com</a></p></div></div>
+    <div id="kyleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="kyleModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('kyleModal')" aria-label="Close dialog">&times;</button><h2 id="kyleModalTitle">Kyle Foster</h2><p><strong>Head of Marketing:</strong> Responsible for RIDEBOX brand identity and communications.</p><p><strong>Email:</strong> <a href="mailto:kyle@rideboxapp.com" class="modal-email-link">kyle@rideboxapp.com</a></p></div></div>
+    <div id="tebogoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tebogoModalTitle"><div class="modal-content"><button class="close-btn" onclick="closeModal('tebogoModal')" aria-label="Close dialog">&times;</button><h2 id="tebogoModalTitle">Tebogo Pii</h2><p><strong>Front-End Developer:</strong> Responsible for the architectural design and implementation of the RIDEBOX digital interface and user experience.</p><p><strong>Email:</strong> <a href="mailto:tebogo@rideboxapp.com" class="modal-email-link">tebogo@rideboxapp.com</a></p></div></div>
 
     <section id="contact" class="section">
         <h2 class="section-title">Connect</h2>
