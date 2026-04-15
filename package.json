@@ -1,0 +1,23 @@
+{
+  "name": "ridebox-app",
+  "version": "1.0.0",
+  "description": "RIDEBOX - Solar-Powered E-Hailing Platform",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khuzeni/RideBox-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Khuzeni/RideBox-App/issues"
+  },
+  "homepage": "https://github.com/Khuzeni/RideBox-App#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
