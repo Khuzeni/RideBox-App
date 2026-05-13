@@ -807,6 +807,61 @@ body::after{
   background:rgba(255,80,80,.08);
   color:#ff6060;border:1px solid rgba(255,80,80,.25);
 }
+
+/* ══════════════════════════════════════════════════
+   MODALS
+══════════════════════════════════════════════════ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.88);
+  z-index: 4000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.modal-box {
+  background: var(--ink);
+  border: 1px solid var(--border-strong);
+  padding: 52px 48px;
+  width: 92%;
+  max-width: 600px;
+  position: relative;
+  animation: slideUp .4s var(--ease);
+}
+.modal-close {
+  position: absolute;
+  top: 18px; right: 20px;
+  background: none; border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: opacity .2s;
+}
+.modal-close:hover { opacity: .6; }
+.modal h2 {
+  font-family: var(--ff-sans);
+  font-size: 1rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+.modal p {
+  font-family: var(--ff-mono);
+  font-size: .82rem;
+  color: var(--ghost);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+.modal-link {
+  color: var(--white);
+  border-bottom: 1px solid var(--border-strong);
+  transition: border-color .2s;
+}
+.modal-link:hover { border-color: var(--white); }
  
 /* ══════════════════════════════════════════════════
    RESPONSIVE
