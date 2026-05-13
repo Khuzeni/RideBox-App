@@ -130,9 +130,41 @@
     }
     @media(max-width:768px){
       .services-grid{grid-template-columns:1fr}
-      .svc-cell{border-right:none}
+      .svc-cell{border-right:none;padding:42px 28px}
+      .svc-title{font-size:.8rem}
+      .svc-body{font-size:.75rem}
       .hiw-track{grid-template-columns:1fr}
-      .hiw-step{border-right:none}
+      .hiw-step{border-right:none;padding:38px 24px}
+      .hiw-num{font-size:2.8rem}
+      .hiw-title{font-size:.8rem}
+      .hiw-body{font-size:.75rem}
+      .testi-body{font-size:.77rem}
+      .testi-name{font-size:.78rem}
+      .testi-role{font-size:.65rem}
+    }
+    @media(max-width:600px){
+      .svc-cell{padding:38px 22px}
+      .svc-title{font-size:.77rem}
+      .svc-body{font-size:.72rem}
+      .hiw-step{padding:34px 20px}
+      .hiw-num{font-size:2.4rem}
+      .hiw-title{font-size:.77rem}
+      .hiw-body{font-size:.72rem}
+      .testi-body{font-size:.74rem}
+      .testi-name{font-size:.76rem}
+      .testi-role{font-size:.62rem}
+    }
+    @media(max-width:480px){
+      .svc-cell{padding:32px 18px}
+      .svc-title{font-size:.74rem;margin-bottom:10px}
+      .svc-body{font-size:.7rem;line-height:1.7}
+      .hiw-step{padding:30px 16px}
+      .hiw-num{font-size:2rem}
+      .hiw-title{font-size:.74rem}
+      .hiw-body{font-size:.68rem;line-height:1.65}
+      .testi-body{font-size:.71rem;line-height:1.7}
+      .testi-name{font-size:.73rem}
+      .testi-role{font-size:.6rem}
     }
   </style>
 </head>
@@ -317,7 +349,7 @@
  
 <footer class="site-footer">
   <div class="footer-grid">
-    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
+    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://www.linkedin.com/company/ridebox-technologies/posts/?feedView=all" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://www.instagram.com/ridebox_technologies" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.79.263-1.473.606-2.115 1.248-.64.64-.985 1.324-1.248 2.106-.266.788-.467 1.657-.527 2.935C.038 8.333.025 8.74.025 12c0 3.26.015 3.667.072 4.947.06 1.277.261 2.148.527 2.935.263.79.606 1.473 1.248 2.115.64.64 1.325.985 2.106 1.248.788.266 1.657.467 2.935.527 1.28.058 1.687.072 4.947.072s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.935-.527.79-.263 1.473-.606 2.115-1.248.64-.64.985-1.325 1.248-2.106.266-.788.467-1.657.527-2.935.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.527-2.935-.263-.79-.606-1.473-1.248-2.115-.64-.64-1.325-.985-2.106-1.248-.788-.266-1.657-.467-2.935-.527-1.28-.058-1.687-.072-4.947-.072zm0 2.16c3.203 0 3.585.009 4.85.064 1.17.054 1.805.244 2.227.404.56.217.96.477 1.382.896.419.42.679.822.896 1.381.16.422.35 1.057.404 2.227.055 1.266.064 1.645.064 4.85s-.009 3.585-.064 4.85c-.054 1.17-.244 1.805-.404 2.227-.217.56-.477.96-.896 1.382-.42.419-.822.679-1.381.896-.422.16-1.057.35-2.227.404-1.266.055-1.645.064-4.85.064s-3.585-.009-4.85-.064c-1.17-.054-1.805-.244-2.227-.404-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.822-.896-1.381-.16-.422-.35-1.057-.404-2.227-.055-1.266-.064-1.645-.064-4.85s.009-3.585.064-4.85c.054-1.17.244-1.805.404-2.227.217-.56.477-.96.896-1.382.42-.419.822-.679 1.381-.896.422-.16 1.057-.35 2.227-.404 1.266-.055 1.645-.064 4.85-.064z"/><circle cx="12" cy="12" r="3.846"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
     <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
   </div>
