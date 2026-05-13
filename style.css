@@ -24,6 +24,7 @@
   --ff-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ff-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ff-mono:  'DM Mono', monospace;
+  --ff-code:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
  
   --ease:        cubic-bezier(.16,1,.3,1);
   --ease-sharp:  cubic-bezier(.77,0,.175,1);
@@ -35,13 +36,17 @@ html{font-size:16px;scroll-behavior:smooth}
 body{
   background:var(--black);
   color:var(--white);
-  font-family:var(--ff-sans);
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height:1.6;
   overflow-x:hidden;
+}
+*{
+  font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit}
+code,pre{font-family:var(--ff-code)}
  
 /* ── Film-grain overlay ──────────────────────────── */
 body::after{
@@ -344,8 +349,8 @@ body::after{
 }
 .section-title{
   font-family:var(--ff-serif);
-  font-size:clamp(2.2rem,5vw,4rem);
-  font-weight:300;letter-spacing:-1px;line-height:1.05;
+  font-size:clamp(1.8rem,4.2vw,3.2rem);
+  font-weight:300;letter-spacing:-0.5px;line-height:1.1;
 }
 .section-sub{
   font-family:var(--ff-mono);
@@ -372,9 +377,9 @@ body::after{
 }
 .page-hero-title{
   font-family:var(--ff-serif);
-  font-size:clamp(4rem,11vw,9rem);
+  font-size:clamp(2.5rem,8vw,5.5rem);
   font-weight:300;
-  letter-spacing:-3px;line-height:.9;
+  letter-spacing:-2px;line-height:.95;
   margin-bottom:40px;
   position:relative;z-index:2;
 }
@@ -877,35 +882,36 @@ body::after{
 @media(max-width:768px){
   .section{padding:60px 5%}
   .page-hero{padding:100px 5% 50px;min-height:auto}
-  .page-hero-title{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:24px}
-  .page-hero-eyebrow{margin-bottom:20px;font-size:.6rem}
-  .page-hero-body{font-size:.75rem}
+  .page-hero-title{font-size:clamp(2.2rem,6vw,3.2rem);margin-bottom:24px}
+  .page-hero-eyebrow{margin-bottom:20px;font-size:.68rem;letter-spacing:2px}
+  .page-hero-body{font-size:.82rem;line-height:1.9}
   .page-hero-num{display:none}
   .bg-word{font-size:clamp(5rem,15vw,10rem);display:none}
   .footer-grid{grid-template-columns:1fr;gap:36px}
   .footer-bottom{flex-direction:column;align-items:flex-start}
-  #cookieBanner{flex-direction:column;text-align:center}
+  #cookieBanner{flex-direction:column;text-align:center;padding:16px 4%}
   .cookie-btns{justify-content:center}
   .nav-links,.nav-pill{display:none}
   .nav-toggle{display:flex}
-  .btn{padding:12px 28px;font-size:.68rem}
+  .btn{padding:12px 28px;font-size:.72rem;letter-spacing:1.5px}
 }
 @media(max-width:600px){
   .section{padding:50px 4%}
   .page-hero{padding:80px 4% 40px;min-height:auto}
-  .page-hero-title{font-size:clamp(2rem,5vw,2.8rem);margin-bottom:20px}
-  .page-hero-eyebrow{margin-bottom:16px;font-size:.55rem}
-  .page-hero-body{font-size:.72rem;line-height:1.8}
+  .page-hero-title{font-size:clamp(1.9rem,5vw,2.8rem);margin-bottom:20px}
+  .page-hero-eyebrow{margin-bottom:16px;font-size:.62rem;letter-spacing:2px}
+  .page-hero-body{font-size:.78rem;line-height:1.85}
 }
 @media(max-width:480px){
-  html{font-size:14px}
+  html{font-size:16px}
   .section{padding:40px 4%}
   .page-hero{padding:70px 4% 35px;min-height:auto}
-  .page-hero-title{letter-spacing:-1px;font-size:clamp(1.6rem,4.5vw,2.4rem)}
-  .page-hero-eyebrow{letter-spacing:2px}
-  .page-hero-body{font-size:.7rem}
-  .nav-logo-text{font-size:.8rem;letter-spacing:3px}
-  .btn{padding:12px 24px;font-size:.65rem}
+  .page-hero-title{letter-spacing:-0.5px;font-size:clamp(1.6rem,5vw,2.4rem)}
+  .page-hero-eyebrow{letter-spacing:1.5px;font-size:.58rem}
+  .page-hero-body{font-size:.75rem;line-height:1.8}
+  .nav-logo-text{font-size:.8rem;letter-spacing:2.5px}
+  .nav-links li a{font-size:.6rem;padding:6px 11px}
+  .btn{padding:12px 24px;font-size:.66rem;letter-spacing:1.2px}
   a{-webkit-tap-highlight-color:rgba(255,255,255,.1)}
 }
   .page-hero-body{font-size:.7rem}

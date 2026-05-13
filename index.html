@@ -28,23 +28,48 @@
       justify-content:flex-end;
       padding:160px 8% 0;
     }
-    @media(max-width:768px){
-      .home-hero{min-height:auto}
-      .hero-main{padding:100px 5% 0;min-height:auto}
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:40px;
+      align-items:center;
+    }
+    .hero-text{
+      flex:1;
+    }
+    .hero-image{
+      width:320px;
+      height:auto;
+      max-width:100%;
+      border:1px solid var(--border-strong);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .hero-image img{
+      width:100%;
+      height:auto;
+      display:block;
     }
     @media(max-width:768px){
       .home-hero{min-height:auto}
       .hero-main{padding:100px 5% 0;min-height:auto}
+      .hero-content{grid-template-columns:1fr;gap:30px}
+      .hero-image{width:100%;max-width:280px;margin:0 auto}
+      .hero-headline{font-size:clamp(2.8rem,8vw,4.5rem)}
     }
     @media(max-width:480px){
       .home-hero{min-height:auto}
       .hero-main{padding:80px 4% 0;min-height:auto}
+      .hero-image{width:100%;max-width:240px}
+      .hero-headline{font-size:clamp(2rem,6vw,3.5rem)}
     }
     .hero-headline{
-      font-family:var(--ff-serif);
-      font-size:clamp(5rem,14vw,12rem);
+      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size:clamp(3.5rem,10vw,8rem);
       font-weight:300;
-      letter-spacing:-5px;
+      letter-spacing:-4px;
       line-height:.88;
       margin-bottom:40px;
     }
@@ -218,10 +243,34 @@
       .hero-meta-left{border-right:none;border-bottom:1px solid var(--border)}
       .hero-meta-right{justify-content:flex-start}
       .intro-block{grid-template-columns:1fr;gap:40px}
+      .intro-statement{font-size:clamp(1.6rem,3.5vw,2.6rem)}
+      .intro-para{font-size:.8rem;line-height:1.95}
       .stats-strip{grid-template-columns:1fr}
-      .stat-cell{border-right:none;border-bottom:1px solid var(--border-strong)}
+      .stat-cell{border-right:none;border-bottom:1px solid var(--border-strong);padding:48px 24px}
+      .stat-num-big{font-size:clamp(2.5rem,5vw,4rem)}
+      .stat-lbl{font-size:.68rem}
       .why-grid{grid-template-columns:1fr}
-      .why-item{border-right:none;border-bottom:1px solid var(--border-strong)}
+      .why-item{border-right:none;border-bottom:1px solid var(--border-strong);padding:42px 28px}
+      .why-num{font-size:3rem}
+      .why-title{font-size:.82rem}
+      .why-body{font-size:.76rem;line-height:1.8}
+    }
+    @media(max-width:600px){
+      .intro-statement{font-size:clamp(1.4rem,3vw,2.2rem)}
+      .intro-para{font-size:.77rem}
+      .stat-num-big{font-size:clamp(2rem,4.5vw,3.2rem)}
+      .why-num{font-size:2.5rem;margin-bottom:18px}
+      .why-title{font-size:.78rem;margin-bottom:10px}
+      .why-body{font-size:.72rem}
+    }
+    @media(max-width:480px){
+      .intro-statement{font-size:clamp(1.2rem,2.8vw,1.8rem);line-height:1.2}
+      .intro-para{font-size:.75rem;line-height:1.85}
+      .stat-num-big{font-size:clamp(1.8rem,4vw,2.8rem)}
+      .stat-lbl{font-size:.62rem}
+      .why-num{font-size:2.2rem}
+      .why-title{font-size:.75rem}
+      .why-body{font-size:.7rem;line-height:1.7}
     }
   </style>
 </head>
@@ -267,11 +316,18 @@
         Cape Town · South Africa · Est. 2024
       </span>
     </span>
-    <h1 class="hero-headline">
-      <span class="reveal-wrap"><span class="reveal-line">Advancing</span></span>
-      <span class="reveal-wrap"><span class="reveal-line"><em>South Africa's</em></span></span>
-      <span class="reveal-wrap"><span class="reveal-line">Mobility</span></span>
-    </h1>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-headline">
+          <span class="reveal-wrap"><span class="reveal-line">Advancing</span></span>
+          <span class="reveal-wrap"><span class="reveal-line"><em>South Africa's</em></span></span>
+          <span class="reveal-wrap"><span class="reveal-line">Mobility</span></span>
+        </h1>
+      </div>
+      <div class="hero-image fade-up delay-1">
+        <img src="ridebox-kiosk.png" alt="RIDEBOX Solar-Powered Hailing Kiosk" width="320" height="400">
+      </div>
+    </div>
   </div>
   <div class="hero-meta">
     <div class="hero-meta-left">
@@ -431,8 +487,11 @@
         <a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
         </a>
-        <a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/ridebox-technologies/posts/?feedView=all" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/ridebox_technologies" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.79.263-1.473.606-2.115 1.248-.64.64-.985 1.324-1.248 2.106-.266.788-.467 1.657-.527 2.935C.038 8.333.025 8.74.025 12c0 3.26.015 3.667.072 4.947.06 1.277.261 2.148.527 2.935.263.79.606 1.473 1.248 2.115.64.64 1.325.985 2.106 1.248.788.266 1.657.467 2.935.527 1.28.058 1.687.072 4.947.072s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.935-.527.79-.263 1.473-.606 2.115-1.248.64-.64.985-1.325 1.248-2.106.266-.788.467-1.657.527-2.935.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.527-2.935-.263-.79-.606-1.473-1.248-2.115-.64-.64-1.325-.985-2.106-1.248-.788-.266-1.657-.467-2.935-.527-1.28-.058-1.687-.072-4.947-.072zm0 2.16c3.203 0 3.585.009 4.85.064 1.17.054 1.805.244 2.227.404.56.217.96.477 1.382.896.419.42.679.822.896 1.381.16.422.35 1.057.404 2.227.055 1.266.064 1.645.064 4.85s-.009 3.585-.064 4.85c-.054 1.17-.244 1.805-.404 2.227-.217.56-.477.96-.896 1.382-.42.419-.822.679-1.381.896-.422.16-1.057.35-2.227.404-1.266.055-1.645.064-4.85.064s-3.585-.009-4.85-.064c-1.17-.054-1.805-.244-2.227-.404-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.822-.896-1.381-.16-.422-.35-1.057-.404-2.227-.055-1.266-.064-1.645-.064-4.85s.009-3.585.064-4.85c.054-1.17.244-1.805.404-2.227.217-.56.477-.96.896-1.382.42-.419.822-.679 1.381-.896.422-.16 1.057-.35 2.227-.404 1.266-.055 1.645-.064 4.85-.064z"/><circle cx="12" cy="12" r="3.846"/></svg>
         </a>
         <a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg>
