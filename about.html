@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About RIDEBOX — Our story, mission, vision, and the values that drive us to advance South Africa's mobility.">
+  <link rel="icon" type="image/png" href="ridebox-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <title>About | RIDEBOX</title>
+  <style>
+    .about-origin{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:100px;align-items:start;
+    }
+    .origin-quote{
+      font-family:var(--ff-serif);
+      font-size:clamp(1.6rem,3.5vw,2.8rem);
+      font-weight:300;
+      letter-spacing:-.5px;line-height:1.2;
+      color:var(--soft);
+      margin-bottom:36px;
+    }
+    .origin-quote em{font-style:italic;color:var(--ghost)}
+    .origin-body{
+      font-family:var(--ff-mono);
+      font-size:.82rem;font-weight:300;
+      color:var(--ghost);line-height:1.95;
+    }
+    .origin-body p{margin-bottom:22px}
+    .origin-body p:last-child{margin-bottom:0}
+ 
+    .timeline{
+      border-left:1px solid var(--border-strong);
+      padding-left:40px;
+      display:flex;flex-direction:column;gap:48px;
+    }
+    .timeline-item{position:relative}
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-44.5px;top:6px;
+      width:8px;height:8px;
+      border:1px solid var(--border-strong);
+      background:var(--black);
+      border-radius:50%;
+    }
+    .timeline-year{
+      font-family:var(--ff-mono);
+      font-size:.6rem;letter-spacing:3px;
+      color:var(--muted);text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .timeline-event{
+      font-family:var(--ff-sans);
+      font-size:.92rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:1px;
+      margin-bottom:8px;
+    }
+    .timeline-detail{
+      font-family:var(--ff-mono);
+      font-size:.76rem;font-weight:300;
+      color:var(--ghost);line-height:1.8;
+    }
+ 
+    .mvv-row{
+      display:grid;grid-template-columns:1fr 1fr;
+      border:1px solid var(--border-strong);
+    }
+    .mvv-cell{
+      padding:56px 48px;
+      border-right:1px solid var(--border-strong);
+      transition:background .35s;
+    }
+    .mvv-cell:last-child{border-right:none}
+    .mvv-cell:hover{background:var(--charcoal)}
+    .mvv-label{
+      font-family:var(--ff-mono);
+      font-size:.6rem;letter-spacing:4px;
+      text-transform:uppercase;color:var(--muted);
+      margin-bottom:20px;
+    }
+    .mvv-text{
+      font-family:var(--ff-serif);
+      font-size:1.25rem;font-weight:300;
+      line-height:1.65;letter-spacing:-.2px;
+    }
+ 
+    .values-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);
+      border:1px solid var(--border-strong);
+    }
+    .value-cell{
+      padding:52px 40px;
+      border-right:1px solid var(--border-strong);
+      border-bottom:1px solid var(--border-strong);
+      transition:background .35s;position:relative;overflow:hidden;
+    }
+    .value-cell:hover{background:var(--charcoal)}
+    .value-cell::after{
+      content:'';
+      position:absolute;bottom:0;left:0;
+      height:1px;width:0;background:var(--white);
+      transition:width .55s var(--ease);
+    }
+    .value-cell:hover::after{width:100%}
+    .value-num{
+      font-family:var(--ff-mono);
+      font-size:.6rem;letter-spacing:3px;
+      color:var(--muted);margin-bottom:18px;
+    }
+    .value-title{
+      font-family:var(--ff-sans);
+      font-size:.95rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:2px;
+      margin-bottom:14px;
+    }
+    .value-body{
+      font-family:var(--ff-mono);
+      font-size:.78rem;font-weight:300;
+      color:var(--ghost);line-height:1.9;
+    }
+ 
+    @media(max-width:900px){
+      .about-origin{grid-template-columns:1fr;gap:50px}
+      .mvv-row{grid-template-columns:1fr}
+      .mvv-cell{border-right:none;border-bottom:1px solid var(--border-strong)}
+      .values-grid{grid-template-columns:1fr}
+      .value-cell{border-right:none}
+    }
+  </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="page-curtain"></div>
+ 
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span class="nav-logo-text">RIDEBOX</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+    <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile">
+  <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+  <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+  <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+ 
+<main id="main">
+ 
+<header class="page-hero about-decoration">
+  <span class="page-hero-eyebrow fade-in">Our Story</span>
+  <h1 class="page-hero-title">
+    <span class="reveal-wrap"><span class="reveal-line">Who We Are</span></span>
+    <span class="reveal-wrap"><span class="reveal-line" style="font-style:italic;color:var(--ghost)">&amp; What We Stand For</span></span>
+  </h1>
+  <p class="page-hero-body fade-up delay-2">
+    Two CPUT graduates from Soweto and Port Elizabeth — frustrated by a broken system — built the alternative South Africa deserved.
+  </p>
+  <div class="page-hero-decoration" aria-hidden="true"><div class="timeline-visual"></div></div>
+</header>
+ 
+<!-- ── ORIGIN ── -->
+<section class="section">
+  <div class="section-meta fade-up">
+    <span class="section-tag">The Origin</span>
+    <h2 class="section-title">A frustration<br>turned into a platform</h2>
+  </div>
+  <div class="about-origin">
+    <div>
+      <p class="origin-quote fade-up delay-1">
+        "Modern urban mobility is entirely dependent on your smartphone, your data, and the grid. When any of those fail, you're stranded. We decided to fix that."
+      </p>
+      <div class="fade-up delay-2">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">The Problem</div>
+            <div class="timeline-event">Last-Mile Communication Gap</div>
+            <div class="timeline-detail">Urban mobility networks across South Africa fail the moment your personal device runs out of battery or data, or when the grid goes down. Millions left stranded, unable to access transportation.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">The Insight</div>
+            <div class="timeline-event">Infrastructure, Not Apps</div>
+            <div class="timeline-detail">Extract digital mobility software from personal smartphones and embed it directly into physical infrastructure. Deploy hardened, solar-powered kiosks at high-traffic nodes and let the system operate independently of the grid.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">The Build</div>
+            <div class="timeline-event">CPUT Founders</div>
+            <div class="timeline-detail">Dumisane Zikalala and Alulutho Mbangela met at Cape Peninsula University of Technology, both frustrated by the same problem. They chose to engineer the solution instead of accepting the status quo.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Today</div>
+            <div class="timeline-event">Pilot Rollout 2024-2025</div>
+            <div class="timeline-detail">Launching our first 21 kiosks at major airports, university campuses, and transit hubs across South Africa. Each unit 100% solar-powered, every driver fully vetted, every journey tracked and protected.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up delay-2">
+      <div class="origin-body">
+        <p>Modern urban mobility networks share a critical vulnerability: they depend entirely on commuters possessing charged personal devices and access to a stable power grid. When those conditions fail, the entire system fails. People get stranded.</p>
+        <p>Dumisane Zikalala and Alulutho Mbangela, both CPUT graduates, saw this problem from different corners of South Africa. One from Soweto, one from Port Elizabeth. Both realized the solution wasn't to build a better app. It was to remove the need for an app altogether.</p>
+        <p>RideBox extracts digital mobility software from personal smartphones and embeds it directly into solar-powered physical infrastructure deployed at airports, universities, and shopping malls. The result: safe, accessible transportation that works regardless of load shedding, dead batteries, or data depletion.</p>
+        <p>Every design decision follows one principle: does this make safe, affordable, and dignified transport more accessible to more South Africans?</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── MISSION & VISION ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-meta fade-up">
+    <span class="section-tag">Direction</span>
+    <h2 class="section-title">Mission &amp; Vision</h2>
+  </div>
+  <div class="mvv-row fade-up delay-1">
+    <div class="mvv-cell">
+      <div class="mvv-label">Mission</div>
+      <div class="mvv-text">To deliver safe, accessible, and energy-independent e-hailing infrastructure that operates independently of personal devices or grid conditions.</div>
+    </div>
+    <div class="mvv-cell">
+      <div class="mvv-label">Vision</div>
+      <div class="mvv-text">A South Africa where safe, reliable, and affordable transportation is a right for everyone, powered entirely by renewable energy and available to anyone, anywhere.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── VALUES ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-meta fade-up">
+    <span class="section-tag">What We Believe</span>
+    <h2 class="section-title">Core Values</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-cell fade-up">
+      <div class="value-num">01</div>
+      <div class="value-title">Hardware Resilience</div>
+      <div class="value-body">Build infrastructure that survives the real world. Vandal-proof. Weather-proof. Power-independent. Every component engineered for conditions on South African streets, not imported assumptions.</div>
+    </div>
+    <div class="value-cell fade-up delay-1">
+      <div class="value-num">02</div>
+      <div class="value-title">Safety by Default</div>
+      <div class="value-body">Facial verification at booking. Pre-screened drivers. SOS panic buttons. Real-time tracking. Proactive AI sentiment analysis. No compromises. Every journey protected from both sides.</div>
+    </div>
+    <div class="value-cell fade-up delay-2">
+      <div class="value-num">03</div>
+      <div class="value-title">Radical Accessibility</div>
+      <div class="value-body">All 11 official South African languages. Fixed, transparent pricing. No smartphone required. No data needed. No assumptions about user literacy. Mobility works for everyone.</div>
+    </div>
+    <div class="value-cell fade-up delay-3">
+      <div class="value-num">04</div>
+      <div class="value-title">Community First</div>
+      <div class="value-body">Hire locally. Operate transparently. Pay drivers fairly and consistently. Reinvest profits back into the communities we serve. Our growth and their growth are inseparable.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── CTA ── -->
+<section class="section" style="padding:80px 8%">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap">
+    <div class="fade-up">
+      <span class="section-tag">The People</span>
+      <h2 class="section-title">Meet the team behind the platform.</h2>
+    </div>
+    <a href="team.html" class="btn btn-fill magnetic fade-up delay-2">
+      <span>View Team</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+ 
+</main>
+ 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
+    <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="popia.html">POPIA</a></div></div>
+</footer>
+ 
+<div id="cookieBanner" role="region"><p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></p><div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button class="c-btn accept" onclick="acceptCookies()">Accept</button></div></div>
+<div id="privacyModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button><h2>Privacy Policy</h2><p>RideBox (Pty) Ltd protects your information under POPIA. We never sell data to third parties. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+<div id="termsModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button><h2>Terms of Service</h2><p>Governed by the laws of the Republic of South Africa. Questions: <a href="mailto:legal@rideboxapp.com" class="modal-link">legal@rideboxapp.com</a></p></div></div>
+<div id="popiaModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button><h2>POPIA Notice</h2><p>Full compliance with POPIA Act 4 of 2013. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+ 
+<script src="main.js"></script>
+</body>
+</html>

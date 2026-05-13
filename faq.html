@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RIDEBOX FAQ — Frequently asked questions about our solar-powered e-hailing platform, services, and how it works.">
+  <link rel="icon" type="image/png" href="ridebox-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <title>FAQ | RIDEBOX</title>
+  <style>
+    /* FAQ accordion */
+    .faq-container{
+      max-width:900px;
+      display:flex;flex-direction:column;gap:1px;
+      border:1px solid var(--border-strong);
+    }
+    .faq-item{
+      border-bottom:1px solid var(--border-strong);
+      overflow:hidden;
+      background:var(--black);
+      transition:background .3s;
+    }
+    .faq-item:last-child{border-bottom:none}
+    .faq-item.open{background:var(--charcoal)}
+    .faq-question{
+      padding:32px;
+      display:flex;justify-content:space-between;align-items:flex-start;
+      gap:32px;
+      cursor:pointer;
+      user-select:none;
+      transition:all .3s;
+    }
+    .faq-question:hover{background:var(--charcoal)}
+    .faq-q-text{
+      flex:1;
+      font-family:var(--ff-sans);
+      font-size:.95rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:1px;
+      line-height:1.4;
+    }
+    .faq-toggle{
+      flex-shrink:0;
+      width:24px;height:24px;
+      display:flex;align-items:center;justify-content:center;
+      position:relative;
+      transition:transform .35s var(--ease);
+    }
+    .faq-item.open .faq-toggle{transform:rotate(180deg)}
+    .faq-toggle::before,
+    .faq-toggle::after{
+      content:'';
+      position:absolute;
+      background:var(--white);
+    }
+    .faq-toggle::before{
+      width:100%;height:1.5px;
+    }
+    .faq-toggle::after{
+      width:1.5px;height:100%;
+      transition:all .35s var(--ease);
+    }
+    .faq-item.open .faq-toggle::after{height:0}
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .4s var(--ease),padding .4s;
+      padding:0 32px;
+    }
+    .faq-item.open .faq-answer{
+      max-height:500px;
+      padding-bottom:32px;
+    }
+    .faq-a-text{
+      font-family:var(--ff-mono);
+      font-size:.82rem;
+      color:var(--ghost);
+      line-height:1.95;
+    }
+    .faq-a-text p{margin-bottom:12px}
+    .faq-a-text p:last-child{margin-bottom:0}
+    .faq-a-text a{
+      color:var(--white);
+      border-bottom:1px solid var(--border-strong);
+      transition:border-color .25s;
+    }
+    .faq-a-text a:hover{border-color:var(--white)}
+
+    /* FAQ categories */
+    .faq-categories{
+      display:flex;gap:12px;margin-bottom:60px;flex-wrap:wrap;
+    }
+    .faq-cat-btn{
+      padding:10px 20px;
+      border:1px solid var(--border-strong);
+      background:transparent;
+      color:var(--ghost);
+      font-family:var(--ff-mono);
+      font-size:.7rem;
+      text-transform:uppercase;letter-spacing:1.5px;
+      cursor:pointer;
+      transition:all .25s;
+    }
+    .faq-cat-btn:hover{
+      background:var(--white);
+      color:var(--black);
+      border-color:var(--white);
+    }
+    .faq-cat-btn.active{
+      background:var(--white);
+      color:var(--black);
+      border-color:var(--white);
+    }
+
+    @media(max-width:768px){
+      .faq-question{padding:24px;gap:20px}
+      .faq-answer{padding:0 24px}
+      .faq-item.open .faq-answer{padding-bottom:24px}
+      .faq-q-text{font-size:.85rem}
+    }
+  </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="page-curtain"></div>
+ 
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span class="nav-logo-text">RIDEBOX</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+    <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile">
+  <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+  <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+  <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+ 
+<main id="main">
+ 
+<header class="page-hero faq-decoration">
+  <span class="page-hero-eyebrow fade-in">Questions? We Have Answers.</span>
+  <h1 class="page-hero-title">
+    <span class="reveal-wrap"><span class="reveal-line">Frequently Asked</span></span>
+    <span class="reveal-wrap"><span class="reveal-line" style="font-style:italic;color:var(--ghost)">Questions</span></span>
+  </h1>
+  <p class="page-hero-body fade-up delay-2">
+    Everything you need to know about RIDEBOX — for riders, drivers, partners, and investors.
+  </p>
+  <div class="page-hero-decoration" aria-hidden="true"><div class="dots-pattern"></div></div>
+</header>
+ 
+<!-- ── MARQUEE ── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">How Does It Work?</span><span class="marquee-item">How Much Does It Cost?</span>
+    <span class="marquee-item">Is It Safe?</span><span class="marquee-item">Can Drivers Use It?</span>
+    <span class="marquee-item">What About Power?</span><span class="marquee-item">Contact Us Anytime</span>
+    <span class="marquee-item">How Does It Work?</span><span class="marquee-item">How Much Does It Cost?</span>
+    <span class="marquee-item">Is It Safe?</span><span class="marquee-item">Can Drivers Use It?</span>
+    <span class="marquee-item">What About Power?</span><span class="marquee-item">Contact Us Anytime</span>
+  </div>
+</div>
+ 
+<!-- ── FAQ SECTION ── -->
+<section class="section">
+  <div class="section-meta fade-up">
+    <h2 class="section-title">Your Questions Answered</h2>
+  </div>
+
+  <div class="faq-container fade-up">
+    <!-- Riders FAQs -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How do I book a ride with RIDEBOX?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Visit any RideBox hub at major airports, shopping malls, universities, or public transport nodes. Use the kiosk screen to enter your destination, confirm the fixed upfront fare, and get matched with a vetted driver within minutes. You can also book through our mobile app if you're already a registered user.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">What happens if there's load shedding?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Our hubs operate at 0% grid dependency. Every RideBox unit has built-in solar arrays and lithium battery backups — so you can book and get a ride even during Eskom load shedding. The system continues to run smoothly and securely, no matter the grid conditions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How is pricing determined? Is there surge pricing?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>All RIDEBOX fares are fixed — you see the price before you book, and it never changes. We do not use surge pricing. Our transparent model means you always know exactly what you're paying, regardless of peak hours or demand.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">What languages does RIDEBOX support?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>We support all 11 official South African languages via our AI-powered interface. Whether you prefer English, Zulu, Xhosa, Sotho, or any other official language, you can interact with our platform in your language of choice. This is especially important for tourists and elderly users who may not be fluent in English.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How does RIDEBOX keep me safe?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Your safety is our top priority. Every RIDEBOX driver undergoes thorough vetting and facial verification. All trips are actively tracked in real time, and you have immediate access to an SOS panic button if you ever feel unsafe. We also employ trained safety personnel and maintain strict compliance with local regulations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Can I pay with different payment methods?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Yes. We accept cash, card payments, and mobile money (Vodacom M-Pesa, FNB eBucks, etc.). For international visitors, we offer automatic currency conversion at fair market rates. Payment can be completed at the kiosk or through the mobile app before or after your trip.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drivers FAQs -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How do I become a RIDEBOX driver?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>To become a RIDEBOX driver, you must have a valid South African driver's license, a roadworthy vehicle, proof of vehicle ownership or rental agreement, and proof of residency. You'll also need to pass our vetting process, which includes a background check and facial verification. Contact our driver support team at <a href="mailto:drivers@rideboxapp.com">drivers@rideboxapp.com</a> to start the application process.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How much do drivers earn per trip?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Earnings are entirely transparent. Before accepting any trip, you'll see the exact fare, distance, and estimated time. You know exactly what you'll earn. There are no hidden deductions, no algorithmic surprises — just clear, fair compensation for every trip completed. Average earnings vary by location and trip distance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Do drivers get training or support?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Absolutely. All drivers receive comprehensive onboarding training on safety protocols, customer service standards, and platform navigation. We also provide ongoing professional development, access to 24/7 support channels, and a dedicated driver advocate team. Your success is our success.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">What if there's a problem during a trip?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>You can contact our support team instantly through the in-app messaging system or via phone. Our support team is available 24/7 and can help resolve disputes, coordinate roadside assistance, or address any concerns. We take driver safety and fair treatment very seriously.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners & Investors FAQs -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Can municipalities integrate a RIDEBOX hub?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>Yes. We partner with municipalities to deploy hubs at transport nodes, civic centres, and public spaces. Our infrastructure adds zero burden to the local power grid — our hubs are completely solar-powered. Contact our partnerships team at <a href="mailto:partnerships@rideboxapp.com">partnerships@rideboxapp.com</a> to discuss deployment opportunities.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">What is the franchise model?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>RIDEBOX franchisees can own and operate a hub in their city. You manage the hub independently, set your own operational hours, and earn passive revenue from the high-visibility digital advertising screens built into every kiosk. We provide all hardware, software, driver network access, and ongoing operational support.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How can investors support RIDEBOX?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>We are actively seeking impact investors, strategic partners, and venture capital to accelerate our expansion across South Africa. We offer transparent financial reporting, clear growth metrics, and alignment with UN Sustainable Development Goals. Interested investors should contact <a href="mailto:investors@rideboxapp.com">investors@rideboxapp.com</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs -->
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Where can I find a RIDEBOX hub?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>RIDEBOX hubs are currently deployed at major airports (JNB, CPT, DUR), shopping malls, universities, and public transport interchanges across South Africa. Use our mobile app or website to see the exact locations of hubs near you. We're expanding to new cities regularly.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Does RIDEBOX operate in my city?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>RIDEBOX is currently operational in Cape Town, Johannesburg, and Durban, with rapid expansion planned. Check our app to see if service is available in your location. If it's not yet available, you can sign up for notifications when we launch in your city.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">How can I provide feedback or report an issue?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>We welcome your feedback. Use the in-app feedback form, email <a href="mailto:support@rideboxapp.com">support@rideboxapp.com</a>, or fill out the contact form on our website. Your input helps us improve the service for everyone. Response times vary but we prioritize urgent safety concerns.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        <div class="faq-q-text">Still have questions?</div>
+        <div class="faq-toggle"></div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-a-text">
+          <p>We're here to help. Reach out to our support team via email at <a href="mailto:support@rideboxapp.com">support@rideboxapp.com</a>, call our hotline during business hours, or use the contact form on our website. We aim to respond to all inquiries within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+</main>
+ 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
+    <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="popia.html">POPIA</a></div></div>
+</footer>
+ 
+<div id="cookieBanner" role="region"><p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></p><div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button class="c-btn accept" onclick="acceptCookies()">Accept</button></div></div>
+<div id="privacyModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button><h2>Privacy Policy</h2><p>RideBox (Pty) Ltd protects your information under POPIA. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+<div id="termsModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button><h2>Terms of Service</h2><p>Governed by South African law. Questions: <a href="mailto:legal@rideboxapp.com" class="modal-link">legal@rideboxapp.com</a></p></div></div>
+<div id="popiaModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button><h2>POPIA Notice</h2><p>Full compliance with POPIA Act 4 of 2013. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+ 
+<script>
+function toggleFAQ(element) {
+  const faqItem = element.closest('.faq-item');
+  const isOpen = faqItem.classList.contains('open');
+  
+  // Close all other items
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (item !== faqItem) item.classList.remove('open');
+  });
+  
+  // Toggle current item
+  faqItem.classList.toggle('open');
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>
