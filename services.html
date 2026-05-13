@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RIDEBOX Services — Solar hubs, secure e-hailing, tourist protection, driver programmes, enterprise partnerships, and franchise opportunities.">
+  <link rel="icon" type="image/png" href="ridebox-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Services | RIDEBOX</title>
+  <style>
+    /* Services 3-col grid */
+    .services-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      border:1px solid var(--border-strong);
+    }
+    .svc-cell{
+      padding:52px 38px;
+      border-right:1px solid var(--border-strong);
+      border-bottom:1px solid var(--border-strong);
+      transition:background .4s;
+      position:relative;overflow:hidden;
+    }
+    .svc-cell:hover{background:var(--charcoal)}
+    .svc-cell::after{
+      content:'';position:absolute;
+      bottom:0;left:0;height:1px;width:0;
+      background:var(--white);
+      transition:width .55s var(--ease);
+    }
+    .svc-cell:hover::after{width:100%}
+    .svc-num{
+      font-family:var(--ff-serif);
+      font-size:3rem;font-weight:300;
+      letter-spacing:-2px;line-height:1;
+      color:var(--dim);margin-bottom:22px;
+      transition:color .35s;
+    }
+    .svc-cell:hover .svc-num{color:var(--white)}
+    .svc-title{
+      font-family:var(--ff-sans);
+      font-size:.88rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:2px;
+      margin-bottom:14px;
+    }
+    .svc-body{
+      font-family:var(--ff-mono);
+      font-size:.78rem;font-weight:300;
+      color:var(--ghost);line-height:1.9;
+    }
+ 
+    /* How it works — horizontal timeline */
+    .hiw-track{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--border-strong);
+      position:relative;
+    }
+    .hiw-step{
+      padding:48px 32px;
+      border-right:1px solid var(--border-strong);
+      position:relative;transition:background .35s;
+    }
+    .hiw-step:last-child{border-right:none}
+    .hiw-step:hover{background:var(--charcoal)}
+    .hiw-step-ghost{
+      position:absolute;top:16px;right:20px;
+      font-family:var(--ff-serif);
+      font-size:4.5rem;font-weight:300;
+      color:var(--border-mid);line-height:1;
+      pointer-events:none;
+    }
+    .hiw-step-tag{
+      font-family:var(--ff-mono);
+      font-size:.58rem;letter-spacing:3px;
+      text-transform:uppercase;color:var(--muted);
+      margin-bottom:12px;
+    }
+    .hiw-step-title{
+      font-family:var(--ff-sans);
+      font-size:.9rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:1.5px;
+      margin-bottom:10px;
+    }
+    .hiw-step-body{
+      font-family:var(--ff-mono);
+      font-size:.76rem;font-weight:300;
+      color:var(--ghost);line-height:1.85;
+    }
+ 
+    /* Testimonials */
+    .testi-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      border:1px solid var(--border-strong);
+    }
+    .testi-cell{
+      padding:48px 36px;
+      border-right:1px solid var(--border-strong);
+      display:flex;flex-direction:column;
+      justify-content:space-between;gap:28px;
+      transition:background .35s;
+    }
+    .testi-cell:last-child{border-right:none}
+    .testi-cell:hover{background:var(--charcoal)}
+    .testi-mark{
+      font-family:var(--ff-serif);
+      font-size:3rem;font-weight:300;
+      color:var(--border-strong);
+      line-height:1;margin-bottom:12px;
+    }
+    .testi-quote{
+      font-family:var(--ff-mono);
+      font-size:.8rem;font-weight:300;
+      color:var(--ghost);line-height:1.9;
+    }
+    .testi-author{
+      font-family:var(--ff-sans);
+      font-size:.8rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:1px;
+    }
+    .testi-role{
+      font-family:var(--ff-mono);
+      font-size:.65rem;color:var(--muted);margin-top:3px;
+    }
+ 
+    @media(max-width:1024px){
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .hiw-track{grid-template-columns:repeat(2,1fr)}
+      .hiw-step{border-bottom:1px solid var(--border-strong)}
+      .testi-grid{grid-template-columns:1fr}
+      .testi-cell{border-right:none;border-bottom:1px solid var(--border-strong)}
+    }
+    @media(max-width:768px){
+      .services-grid{grid-template-columns:1fr}
+      .svc-cell{border-right:none}
+      .hiw-track{grid-template-columns:1fr}
+      .hiw-step{border-right:none}
+    }
+  </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="page-curtain"></div>
+ 
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span class="nav-logo-text">RIDEBOX</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+    <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile">
+  <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+  <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+  <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+ 
+<main id="main">
+ 
+<header class="page-hero services-decoration">
+  <span class="page-hero-eyebrow fade-in">Our Deployment Strategy</span>
+  <h1 class="page-hero-title">
+    <span class="reveal-wrap"><span class="reveal-line">The RideBox</span></span>
+    <span class="reveal-wrap"><span class="reveal-line" style="font-style:italic;color:var(--ghost)">Pilot Program</span></span>
+  </h1>
+  <p class="page-hero-body fade-up delay-2">
+    A 21-unit national pilot targeting high-traffic nodes across South Africa. Three strategic locations per province: regional airports, university campuses, and shopping malls.
+  </p>
+  <div class="page-hero-decoration" aria-hidden="true"><div class="map-pattern"></div></div>
+</header>
+ 
+<!-- ── MARQUEE ── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Regional Airports</span><span class="marquee-item">University Campuses</span>
+    <span class="marquee-item">Shopping Malls</span><span class="marquee-item">21 Units Nationwide</span>
+    <span class="marquee-item">9 Provinces</span><span class="marquee-item">100% Solar Powered</span>
+    <span class="marquee-item">Regional Airports</span><span class="marquee-item">University Campuses</span>
+    <span class="marquee-item">Shopping Malls</span><span class="marquee-item">21 Units Nationwide</span>
+    <span class="marquee-item">9 Provinces</span><span class="marquee-item">100% Solar Powered</span>
+  </div>
+</div>
+ 
+<!-- ── SERVICES ── -->
+<section class="section">
+  <div class="section-meta fade-up">
+    <span class="section-tag">Three Strategic Nodes</span>
+    <h2 class="section-title">Deployment Locations</h2>
+  </div>
+  <div class="services-grid">
+    <div class="svc-cell fade-up">
+      <div class="svc-num">01</div>
+      <div class="svc-title">Regional Airports</div>
+      <div class="svc-body">Units deployed at the largest airport in each province. Targeting international tourists and business travelers who face friction with foreign currency and unfamiliar pricing. AI-assisted price comparison and automatic currency conversion protect visitors from price gouging.</div>
+    </div>
+    <div class="svc-cell fade-up delay-1">
+      <div class="svc-num">02</div>
+      <div class="svc-title">University Campuses</div>
+      <div class="svc-body">Units at the largest university in each province. Serving students who regularly experience dead batteries and depleted data after long days of classes or social events. Immediate access to transportation without requiring a charged personal device.</div>
+    </div>
+    <div class="svc-cell fade-up delay-2">
+      <div class="svc-num">03</div>
+      <div class="svc-title">Shopping Malls</div>
+      <div class="svc-body">Units deployed at the largest shopping mall in each province. Capturing high foot-traffic from shoppers who need reliable transit home. Solves the problem of hands full, phone dead, or unsure about calling a ride in unfamiliar areas.</div>
+    </div>
+    <div class="svc-cell fade-up delay-3">
+      <div class="svc-num">04</div>
+      <div class="svc-title">Vetted Driver Network</div>
+      <div class="svc-body">Every driver undergoes facial verification, background checks, and continuous review. Transparent earnings per trip. Direct support access for drivers on the road. Accountability from both sides of every journey.</div>
+    </div>
+    <div class="svc-cell fade-up delay-4">
+      <div class="svc-num">05</div>
+      <div class="svc-title">Safety Architecture</div>
+      <div class="svc-body">Facial verification at booking time. SOS panic button on every unit. Real-time trip tracking. AI sentiment analysis to flag problematic profiles before dispatch. Emergency response partners on standby 24/7.</div>
+    </div>
+    <div class="svc-cell fade-up delay-5">
+      <div class="svc-num">06</div>
+      <div class="svc-title">Digital Inclusion</div>
+      <div class="svc-body">All 11 official South African languages supported via AI interface. Fixed fares with no surge pricing. Payment through multiple channels including Yoco integration. No smartphone required to book a ride.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── HOW IT WORKS ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-meta fade-up">
+    <span class="section-tag">The Process</span>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Four steps from curb to destination</p>
+  </div>
+  <div class="hiw-track fade-up delay-1">
+    <div class="hiw-step">
+      <div class="hiw-step-ghost">1</div>
+      <div class="hiw-step-tag">Step One</div>
+      <div class="hiw-step-title">Find a Hub</div>
+      <div class="hiw-step-body">Locate your nearest RideBox unit at a major airport, shopping mall, or public transport node or open our mobile app.</div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-ghost">2</div>
+      <div class="hiw-step-tag">Step Two</div>
+      <div class="hiw-step-title">Book a Ride</div>
+      <div class="hiw-step-body">Select your destination, confirm the fixed upfront fare, and get matched with a fully vetted RideBox driver in minutes.</div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-ghost">3</div>
+      <div class="hiw-step-tag">Step Three</div>
+      <div class="hiw-step-title">Travel Safely</div>
+      <div class="hiw-step-body">Every trip is actively tracked, drivers are thoroughly screened, and emergency support is always one tap away via the SOS button.</div>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-step-ghost">4</div>
+      <div class="hiw-step-tag">Step Four</div>
+      <div class="hiw-step-title">Rate &amp; Repeat</div>
+      <div class="hiw-step-body">Your feedback maintains our rigorous service standards. Earn loyalty credits toward future trips with every completed journey.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── TESTIMONIALS ── -->
+<section class="section" style="padding-top:0">
+  <div class="section-meta fade-up">
+    <span class="section-tag">Social Proof</span>
+    <h2 class="section-title">Early Feedback</h2>
+    <p class="section-sub">From pilots &amp; partners across South Africa</p>
+  </div>
+  <div class="testi-grid fade-up delay-1">
+    <div class="testi-cell">
+      <div>
+        <div class="testi-mark">"</div>
+        <p class="testi-quote">Finally an e-hailing option that actually works during load shedding. I cannot wait to book a ride using it. Fixed price, no drama.</p>
+      </div>
+      <div>
+        <div class="testi-author">Zanele M.</div>
+        <div class="testi-role">Frequent Business Traveller · Johannesburg</div>
+      </div>
+    </div>
+    <div class="testi-cell">
+      <div>
+        <div class="testi-mark">"</div>
+        <p class="testi-quote">The model is transparent and fair. I know exactly what I'll earn per trip and the support team will actually reachable when something goes wrong on the road.</p>
+      </div>
+      <div>
+        <div class="testi-author">Sipho K.</div>
+        <div class="testi-role">RideBox Driver Partner · Cape Town</div>
+      </div>
+    </div>
+    <div class="testi-cell">
+      <div>
+        <div class="testi-mark">"</div>
+        <p class="testi-quote">We'll integrate a hub into our campus transport plan. Students will love the fixed pricing and staff will appreciate the added safety layer at our late-night pickup points.</p>
+      </div>
+      <div>
+        <div class="testi-author">Campus Transport Office</div>
+        <div class="testi-role">Partner Institution · Western Cape</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── CTA ── -->
+<section class="section" style="padding:80px 8%">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap">
+    <div class="fade-up">
+      <span class="section-tag">Ready to Scale</span>
+      <h2 class="section-title">Deploy a hub in your<br>municipality or transport network.</h2>
+    </div>
+    <a href="contact.html" class="btn btn-fill magnetic fade-up delay-2">
+      <span>Get In Touch</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+ 
+</main>
+ 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
+    <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="popia.html">POPIA</a></div></div>
+</footer>
+ 
+<div id="cookieBanner" role="region"><p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></p><div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button class="c-btn accept" onclick="acceptCookies()">Accept</button></div></div>
+<div id="privacyModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button><h2>Privacy Policy</h2><p>RideBox (Pty) Ltd protects your information under POPIA. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+<div id="termsModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button><h2>Terms of Service</h2><p>Governed by South African law. Questions: <a href="mailto:legal@rideboxapp.com" class="modal-link">legal@rideboxapp.com</a></p></div></div>
+<div id="popiaModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button><h2>POPIA Notice</h2><p>Full compliance with POPIA Act 4 of 2013. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+ 
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RIDEBOX Hardware — Solar-powered kiosks engineered for South African conditions. Phase 1 compact units and Transit Shelters.">
+  <link rel="icon" type="image/png" href="ridebox-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Hardware | RIDEBOX</title>
+  <style>
+    .hw-intro{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;align-items:start;
+    }
+    .hw-spec-table{
+      border:1px solid var(--border-strong);
+      margin-top:40px;
+    }
+    .hw-spec-row{
+      display:grid;grid-template-columns:1fr 1fr;
+      border-bottom:1px solid var(--border);
+      transition:background .3s;
+    }
+    .hw-spec-row:last-child{border-bottom:none}
+    .hw-spec-row:hover{background:var(--charcoal)}
+    .hw-spec-k,.hw-spec-v{
+      padding:16px 22px;
+      font-family:var(--ff-mono);font-size:.78rem;font-weight:300;
+    }
+    .hw-spec-k{color:var(--muted);border-right:1px solid var(--border)}
+    .hw-spec-v{color:var(--white)}
+ 
+    .hw-phase-label{
+      display:inline-flex;align-items:center;gap:10px;
+      font-family:var(--ff-mono);font-size:.62rem;
+      letter-spacing:3px;text-transform:uppercase;
+      color:var(--muted);margin-bottom:20px;
+    }
+    .hw-phase-label::before{
+      content:'';display:block;
+      width:28px;height:1px;background:var(--border-strong);
+    }
+    .hw-phase-title{
+      font-family:var(--ff-serif);
+      font-size:clamp(1.8rem,3.5vw,3rem);
+      font-weight:300;letter-spacing:-.5px;
+      line-height:1.1;margin-bottom:18px;
+    }
+    .hw-phase-body{
+      font-family:var(--ff-mono);
+      font-size:.8rem;font-weight:300;
+      color:var(--ghost);line-height:1.95;
+      max-width:520px;
+    }
+ 
+    .gallery-duo{
+      display:grid;grid-template-columns:1fr 1fr;gap:2px;
+      margin-top:50px;
+    }
+    .gallery-single{
+      margin-top:50px;
+      max-width:560px;
+    }
+    .gallery-img{
+      background:var(--charcoal);
+      border:1px solid var(--border-strong);
+      overflow:hidden;
+      position:relative;
+    }
+    .gallery-img img{
+      width:100%;height:auto;display:block;
+      transition:transform .8s var(--ease),filter .4s;
+      filter:brightness(.92);
+    }
+    .gallery-img:hover img{transform:scale(1.04);filter:brightness(1)}
+    .gallery-img-cap{
+      position:absolute;bottom:0;left:0;right:0;
+      padding:14px 18px;
+      background:linear-gradient(transparent,rgba(0,0,0,.8));
+      font-family:var(--ff-mono);
+      font-size:.62rem;letter-spacing:2px;
+      text-transform:uppercase;color:var(--muted);
+    }
+ 
+    .phase-block{
+      padding:100px 8%;
+      border-bottom:1px solid var(--border);
+    }
+    .phase-block:last-child{border-bottom:none}
+ 
+    .phase-grid{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:80px;align-items:start;margin-top:60px;
+    }
+ 
+    .security-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      border:1px solid var(--border-strong);
+      margin-top:60px;
+    }
+    .security-item{
+      padding:44px 32px;
+      border-right:1px solid var(--border-strong);
+      transition:background .35s;
+    }
+    .security-item:last-child{border-right:none}
+    .security-item:hover{background:var(--charcoal)}
+    .security-icon{
+      font-size:1.6rem;margin-bottom:18px;
+      filter:grayscale(1);
+    }
+    .security-title{
+      font-family:var(--ff-sans);
+      font-size:.85rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:2px;
+      margin-bottom:10px;
+    }
+    .security-body{
+      font-family:var(--ff-mono);
+      font-size:.77rem;font-weight:300;
+      color:var(--ghost);line-height:1.85;
+    }
+ 
+    @media(max-width:900px){
+      .hw-intro{grid-template-columns:1fr}
+      .phase-grid{grid-template-columns:1fr}
+      .gallery-duo{grid-template-columns:1fr}
+      .security-grid{grid-template-columns:1fr}
+      .security-item{border-right:none;border-bottom:1px solid var(--border-strong)}
+    }
+    @media(max-width:768px){
+      .hw-intro{gap:40px}
+      .phase-block{padding:60px 5%}
+      .hw-phase-title{font-size:clamp(1.4rem,3vw,2rem)}
+      .hw-phase-body{font-size:.75rem}
+      .hw-spec-k,.hw-spec-v{padding:14px 16px;font-size:.73rem}
+      .security-title{font-size:.8rem}
+      .security-body{font-size:.72rem}
+    }
+    @media(max-width:600px){
+      .phase-block{padding:50px 4%}
+      .hw-phase-title{font-size:clamp(1.2rem,2.5vw,1.6rem)}
+      .hw-phase-body{font-size:.7rem}
+      .hw-spec-k,.hw-spec-v{padding:12px 14px;font-size:.68rem}
+      .gallery-img-cap{font-size:.55rem;padding:10px 14px}
+    }
+    @media(max-width:480px){
+      .phase-block{padding:40px 4%}
+      .hw-phase-label{font-size:.55rem}
+      .hw-phase-title{font-size:clamp(1rem,2.2vw,1.4rem);margin-bottom:14px}
+      .hw-phase-body{font-size:.65rem;line-height:1.6}
+      .hw-spec-row{grid-template-columns:1fr}
+      .hw-spec-k{border-right:none;border-bottom:1px solid var(--border);padding:10px 12px}
+      .hw-spec-v{padding:10px 12px;font-size:.65rem}
+      .security-item{padding:24px 16px}
+      .security-icon{font-size:1.2rem;margin-bottom:12px}
+      .security-title{font-size:.75rem}
+      .security-body{font-size:.65rem;line-height:1.6}
+    }
+  </style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="page-curtain"></div>
+ 
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span class="nav-logo-text">RIDEBOX</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hardware.html">Hardware</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile">
+  <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
+  <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+  <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+ 
+<main id="main">
+ 
+<!-- ── HERO ── -->
+<header class="page-hero hardware-decoration">
+  <span class="page-hero-eyebrow fade-in">The Hardware</span>
+  <h1 class="page-hero-title">
+    <span class="reveal-wrap"><span class="reveal-line">Engineered</span></span>
+    <span class="reveal-wrap"><span class="reveal-line" style="font-style:italic;color:var(--ghost)">for South Africa</span></span>
+  </h1>
+  <p class="page-hero-body fade-up delay-2">
+    Every unit is designed from the ground up to withstand vandalism, power cuts, extreme weather, and high daily throughput — while remaining simple enough for anyone to use on their first try.
+  </p>
+  <div class="page-hero-decoration" aria-hidden="true"><div class="tech-grid"></div></div>
+</header>
+ 
+<!-- ── PHASE 1 ── -->
+<section class="phase-block">
+  <div class="hw-phase-label fade-in">Phase 01 — Pilot Deployment 2024</div>
+  <h2 class="hw-phase-title fade-up">The Compact Kiosk</h2>
+  <p class="hw-phase-body fade-up delay-1">
+    Our primary design for the initial 21-unit pilot. Built to withstand vandalism, theft, extreme weather, and high daily usage while remaining intuitive enough for first-time users. Vandal-proof powder-coated steel, 6–8 mm tempered glass, four-bolt concrete anchoring, and fully self-sufficient solar power.
+  </p>
+  <div class="phase-grid">
+    <div class="fade-up delay-1">
+      <div class="gallery-duo">
+        <div class="gallery-img clip-reveal">
+          <img src="RideBox Kiosk-2.jpeg" alt="Ridebox Enclosed Seating Kiosk" loading="lazy">
+          <span class="gallery-img-cap">Projected Design</span>
+        </div>
+        <div class="gallery-img clip-reveal delay-2">
+          <img src="RideBox Kiosk-3.jpeg" alt="Ridebox Standalone Touchscreen Kiosk" loading="lazy">
+          <span class="gallery-img-cap">Standalone Touchscreen</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hw-spec-table fade-up delay-2">
+        <div class="hw-spec-row"><span class="hw-spec-k">Structure</span><span class="hw-spec-v">Powder-coated steel / aluminium</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Glazing</span><span class="hw-spec-v">6–8 mm tempered glass</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Anchoring</span><span class="hw-spec-v">4-bolt concrete system</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Power</span><span class="hw-spec-v">Embedded solar array + Li battery</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Grid dependency</span><span class="hw-spec-v">0%</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Connectivity</span><span class="hw-spec-v">Wi-Fi primary + cellular fallback</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Languages</span><span class="hw-spec-v">All 11 official languages</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Safety</span><span class="hw-spec-v">Facial verification + SOS button</span></div>
+        <div class="hw-spec-row"><span class="hw-spec-k">Ad screens</span><span class="hw-spec-v">High-visibility digital display</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── PHASE 2 ── -->
+<section class="phase-block">
+  <div class="hw-phase-label fade-in">Phase 02 — On the Roadmap</div>
+  <h2 class="hw-phase-title fade-up">The Transit Shelter</h2>
+  <p class="hw-phase-body fade-up delay-1">
+    Planned for major transport nodes and high-dwell locations, the Transit Shelter adds actual weather protection, comfortable seating, and extended multi-screen capacity for areas where passengers may need to wait longer.
+  </p>
+  <div class="gallery-single clip-reveal fade-up delay-2">
+    <div class="gallery-img">
+      <img src="RideBox Kiosk-1.jpeg" alt="Ridebox Multi-Screen Transit Shelter" loading="lazy">
+      <span class="gallery-img-cap">Multi-Screen Transit Shelter — Projected Update</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── SECURITY FEATURES ── -->
+<section class="section">
+  <div class="section-meta fade-up">
+    <span class="section-tag">Built-In Protection</span>
+    <h2 class="section-title">Security by Design</h2>
+    <p class="section-sub">Every layer of the kiosk addresses a real-world threat</p>
+  </div>
+  <div class="security-grid">
+    <div class="security-item fade-up">
+      <div class="security-icon">⚡</div>
+      <div class="security-title">Grid Independence</div>
+      <div class="security-body">Solar + lithium backup keeps every unit live through all stages of load shedding, no exceptions.</div>
+    </div>
+    <div class="security-item fade-up delay-1">
+      <div class="security-icon">◎</div>
+      <div class="security-title">Facial Verification</div>
+      <div class="security-body">Biometric matching ties every booking to the person who made it, protecting both rider and driver.</div>
+    </div>
+    <div class="security-item fade-up delay-2">
+      <div class="security-icon">⬡</div>
+      <div class="security-title">SOS Panic Button</div>
+      <div class="security-body">A direct, immediate link to our safety and security partners — always one tap away from help.</div>
+    </div>
+    <div class="security-item fade-up delay-3">
+      <div class="security-icon">▣</div>
+      <div class="security-title">Vandal Proof Build</div>
+      <div class="security-body">Tempered glass, heavy-gauge steel casing, and deep concrete anchors make every unit theft-resistant.</div>
+    </div>
+    <div class="security-item fade-up delay-4">
+      <div class="security-icon">⌁</div>
+      <div class="security-title">Cellular Fallback</div>
+      <div class="security-body">If local Wi-Fi drops, low-bandwidth cellular backup keeps bookings flowing without interruption.</div>
+    </div>
+    <div class="security-item fade-up delay-5">
+      <div class="security-icon">◈</div>
+      <div class="security-title">Live Monitoring</div>
+      <div class="security-body">Every unit is remotely monitored by our operations team — faults are flagged and resolved in real time.</div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── CTA ── -->
+<section class="section" style="padding:80px 8%">
+  <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;flex-wrap:wrap">
+    <div class="fade-up">
+      <span class="section-tag">Deploy</span>
+      <h2 class="section-title">Interested in placing a unit<br>at your location?</h2>
+    </div>
+    <a href="contact.html" class="btn btn-fill magnetic fade-up delay-2">
+      <span>Get In Touch</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+ 
+</main>
+ 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div>
+      <p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p>
+      <div class="social-row">
+        <a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a>
+        <a href="https://linkedin.com" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a>
+        <a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a>
+      </div>
+    </div>
+    <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="popia.html">POPIA</a></div></div>
+</footer>
+ 
+<div id="cookieBanner" role="region"><p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></p><div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button class="c-btn accept" onclick="acceptCookies()">Accept</button></div></div>
+ 
+<div id="privacyModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button><h2>Privacy Policy</h2><p>RideBox (Pty) Ltd is committed to protecting your personal information in accordance with POPIA (Act 4 of 2013). We only collect what is necessary to operate our services and never sell data to third parties.</p><p>Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+<div id="termsModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button><h2>Terms of Service</h2><p>By accessing the RideBox website or services, you agree to these terms. All content remains the exclusive property of RideBox (Pty) Ltd. Governed by the laws of the Republic of South Africa.</p><p>Questions: <a href="mailto:legal@rideboxapp.com" class="modal-link">legal@rideboxapp.com</a></p></div></div>
+<div id="popiaModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button><h2>POPIA Notice</h2><p>RideBox (Pty) Ltd processes your personal information in full compliance with POPIA (Act 4 of 2013). You have the right to access, correct, or delete your data.</p><p>Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
+ 
+<script src="main.js"></script>
+</body>
+</html>
