@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RIDEBOX - Advanced solar-powered e-hailing solution in South Africa. Secure mobility with 0% grid dependency.">
-    <meta name="keywords" content="e-hailing, rideshare, solar power, South Africa, sustainable transport, mobility solution, ridebox, uber alternative, load shedding">
+    <meta name="description"
+        content="RideBox is a grid-resilient e-hailing platform in South Africa built to combat power instability and transit safety concerns. Operating with 0% grid dependency via solar hubs, it guarantees uninterrupted, secure urban mobility even during severe load-shedding.">
+    <meta name="keywords"
+        content="e-hailing, rideshare, solar power, South Africa, sustainable transport, mobility solution, ridebox, uber alternative, load shedding">
     <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://www.rideboxapp.com/">
     <meta name="robots" content="index, follow">
     <link rel="alternate" href="https://www.rideboxapp.com/" hreflang="en-ZA">
- 
+
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="RideBox">
     <meta property="og:locale" content="en_ZA">
     <meta property="og:url" content="https://www.rideboxapp.com/">
     <meta property="og:title" content="RIDEBOX | Solar-Powered E-Hailing">
-    <meta property="og:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
+    <meta property="og:description"
+        content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
     <meta property="og:image" content="https://www.rideboxapp.com/ridebox-logo.png">
- 
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@rideboxapp">
     <meta name="twitter:title" content="RIDEBOX | Solar-Powered E-Hailing">
-    <meta name="twitter:description" content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
+    <meta name="twitter:description"
+        content="Advanced solar-powered e-hailing solution in South Africa. 0% grid dependency.">
     <meta name="twitter:image" content="https://www.rideboxapp.com/ridebox-logo.png">
- 
+
     <link rel="icon" type="image/png" href="ridebox-logo.png">
     <link rel="apple-touch-icon" href="ridebox-logo.png">
     <meta name="author" content="RideBox Technologies">
     <title>RIDEBOX | Solar-Powered E-Hailing</title>
- 
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,7 +53,7 @@
         ]
     }
     </script>
- 
+
     <style>
         :root {
             --bg-color: #000000;
@@ -57,8 +62,8 @@
             --modal-bg: #111111;
             --accent-color: #4CAF50;
             --error-color: #f44336;
-            --muted: rgba(255,255,255,0.55);
-            --card-bg: rgba(0,0,0,0.5);
+            --muted: rgba(255, 255, 255, 0.55);
+            --card-bg: rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -67,16 +72,18 @@
             box-sizing: border-box;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
- 
-        html { scroll-behavior: smooth; }
- 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
- 
+
         /* ── Skip to content ── */
         .skip-link {
             position: absolute;
@@ -92,8 +99,11 @@
             z-index: 9999;
             transition: top 0.2s;
         }
-        .skip-link:focus { top: 20px; }
- 
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
         /* ── POPIA Cookie Banner ── */
         #cookieBanner {
             position: fixed;
@@ -110,9 +120,24 @@
             z-index: 5000;
             flex-wrap: wrap;
         }
-        #cookieBanner p { font-size: 0.8rem; opacity: 0.85; max-width: 700px; }
-        #cookieBanner a { color: var(--accent-color); text-decoration: underline; }
-        .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+
+        #cookieBanner p {
+            font-size: 0.8rem;
+            opacity: 0.85;
+            max-width: 700px;
+        }
+
+        #cookieBanner a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
         .cookie-btn {
             padding: 10px 24px;
             font-size: 0.75rem;
@@ -123,10 +148,21 @@
             border: 1px solid var(--border-color);
             transition: all 0.3s;
         }
-        .cookie-btn.accept { background: var(--text-color); color: var(--bg-color); }
-        .cookie-btn.decline { background: transparent; color: var(--text-color); }
-        .cookie-btn:hover { opacity: 0.8; }
- 
+
+        .cookie-btn.accept {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .cookie-btn.decline {
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .cookie-btn:hover {
+            opacity: 0.8;
+        }
+
         /* ── Navigation ── */
         nav {
             display: flex;
@@ -141,7 +177,7 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
- 
+
         .logo-container a {
             display: flex;
             align-items: center;
@@ -149,12 +185,29 @@
             text-decoration: none;
             color: var(--text-color);
         }
- 
-        .company-logo { height: 45px; width: auto; transition: transform 0.3s; }
-        .logo-container a:hover .company-logo { transform: scale(1.05); }
-        .logo-text { font-size: 1.4rem; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
- 
-        .nav-links { display: flex; list-style: none; }
+
+        .company-logo {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-container a:hover .company-logo {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
         .nav-links li a {
             color: var(--text-color);
             text-decoration: none;
@@ -164,8 +217,11 @@
             letter-spacing: 1px;
             transition: opacity 0.3s;
         }
-        .nav-links li a:hover { opacity: 0.6; }
- 
+
+        .nav-links li a:hover {
+            opacity: 0.6;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -175,10 +231,26 @@
             padding: 5px;
             gap: 5px;
         }
-        .hamburger span { display: block; width: 25px; height: 2px; background: var(--text-color); transition: all 0.3s; }
-        .hamburger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-        .hamburger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .hamburger[aria-expanded="true"] span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger[aria-expanded="true"] span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         /* ── Hero ── */
         .hero {
@@ -191,11 +263,29 @@
             padding: 140px 20px 60px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
- 
-        .hero-logo { height: 120px; width: auto; margin-bottom: 30px; animation: fadeInDown 0.8s ease; }
-        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; }
-        .hero p.tagline { font-size: 1rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 40px; opacity: 0.8; }
- 
+
+        .hero-logo {
+            height: 120px;
+            width: auto;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+        }
+
+        .hero p.tagline {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
         .video-container {
             width: 100%;
             max-width: 900px;
@@ -204,14 +294,20 @@
             background: #111;
             margin-bottom: 48px;
         }
-        .video-container iframe { width: 100%; height: 100%; border: none; }
- 
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .hero-cta {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .btn-primary {
             background: var(--text-color);
             color: var(--bg-color);
@@ -226,7 +322,12 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,255,255,0.2); }
+
+        .btn-primary:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+        }
 
         .btn-outline {
             background: transparent;
@@ -241,20 +342,54 @@
             border: 2px solid var(--text-color);
             transition: all 0.3s;
         }
-        .btn-outline:hover { background: var(--text-color); color: var(--bg-color); transform: translateY(-2px); }
- 
+
+        .btn-outline:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
         /* ── Shared Section Styles ── */
-        .section { padding: 100px 10%; border-bottom: 1px solid rgba(255, 255, 255, 0.1); background: var(--bg-color); }
-        .section-title { font-size: 1.8rem; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 4px; text-align: center; }
-        .section-subtitle { font-size: 0.85rem; text-align: center; opacity: 0.65; letter-spacing: 2px; text-transform: uppercase; margin-top: -44px; margin-bottom: 60px; }
-        .sub-heading { font-size: 1.5rem; margin: 60px 0 40px; text-transform: uppercase; letter-spacing: 2px; text-align: center; border-top: 1px solid #333; padding-top: 40px; }
+        .section {
+            padding: 100px 10%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            text-align: center;
+            opacity: 0.65;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: -44px;
+            margin-bottom: 60px;
+        }
+
+        .sub-heading {
+            font-size: 1.5rem;
+            margin: 60px 0 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 40px;
+        }
 
         /* ── Product Section ── */
         .hardware-category {
             margin-top: 50px;
             text-align: center;
         }
-        
+
         .hardware-category:not(:first-child) {
             margin-top: 80px;
             padding-top: 60px;
@@ -299,20 +434,23 @@
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-        
+
         .product-gallery img:hover {
             transform: translateY(-5px);
         }
- 
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-        .grid.team-grid { grid-template-columns: repeat(4, 1fr); }
- 
+
+        .grid.team-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
         .card {
             padding: 60px 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -326,38 +464,71 @@
             align-items: center;
             height: 100%;
         }
-        .card:hover, .card:focus { background: var(--text-color); color: var(--bg-color); outline: none; }
-        .card h3 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 900; transition: transform 0.3s; }
-        .card:hover h3 { transform: scale(1.05); }
-        .card h4 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 5px; }
-        .card p { text-align: center; }
- 
+
+        .card:hover,
+        .card:focus {
+            background: var(--text-color);
+            color: var(--bg-color);
+            outline: none;
+        }
+
+        .card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 900;
+            transition: transform 0.3s;
+        }
+
+        .card:hover h3 {
+            transform: scale(1.05);
+        }
+
+        .card h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            text-align: center;
+        }
+
         /* ── About Section ── */
         .about-intro {
             max-width: 780px;
             margin: 0 auto 70px;
             text-align: center;
         }
+
         .about-intro p {
             font-size: 1.15rem;
             line-height: 1.9;
             opacity: 0.85;
         }
- 
+
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .value-item {
             padding: 48px 32px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             transition: background 0.3s;
         }
-        .value-item:last-child { border-right: none; }
-        .value-item:hover { background: rgba(255,255,255,0.04); }
+
+        .value-item:last-child {
+            border-right: none;
+        }
+
+        .value-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
 
         .value-number {
             font-size: 0.7rem;
@@ -366,6 +537,7 @@
             text-transform: uppercase;
             margin-bottom: 16px;
         }
+
         .value-title {
             font-size: 1.1rem;
             font-weight: 900;
@@ -373,8 +545,13 @@
             letter-spacing: 2px;
             margin-bottom: 12px;
         }
-        .value-desc { font-size: 0.85rem; opacity: 0.7; line-height: 1.7; }
- 
+
+        .value-desc {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
         .mvv-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -382,11 +559,16 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             margin-bottom: 60px;
         }
+
         .mvv-item {
             padding: 50px 40px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .mvv-item:last-child { border-right: none; }
+
+        .mvv-item:last-child {
+            border-right: none;
+        }
+
         .mvv-label {
             font-size: 0.7rem;
             letter-spacing: 4px;
@@ -394,12 +576,13 @@
             text-transform: uppercase;
             margin-bottom: 14px;
         }
+
         .mvv-text {
             font-size: 1.2rem;
             font-weight: 700;
             line-height: 1.6;
         }
- 
+
         /* ── Services Section ── */
         .services-grid {
             display: grid;
@@ -408,13 +591,17 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             margin-bottom: 60px;
         }
+
         .service-item {
             padding: 50px 40px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             transition: background 0.3s;
         }
-        .service-item:hover { background: rgba(255,255,255,0.04); }
+
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
 
         .service-num {
             font-size: 3rem;
@@ -423,6 +610,7 @@
             margin-bottom: 20px;
             line-height: 1;
         }
+
         .service-title {
             font-size: 1rem;
             font-weight: 900;
@@ -430,20 +618,30 @@
             letter-spacing: 2px;
             margin-bottom: 14px;
         }
-        .service-desc { font-size: 0.88rem; opacity: 0.72; line-height: 1.75; }
- 
+
+        .service-desc {
+            font-size: 0.88rem;
+            opacity: 0.72;
+            line-height: 1.75;
+        }
+
         .how-it-works {
             display: flex;
             gap: 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .step {
             flex: 1;
             padding: 48px 32px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
         }
-        .step:last-child { border-right: none; }
+
+        .step:last-child {
+            border-right: none;
+        }
+
         .step-num {
             font-size: 4rem;
             font-weight: 900;
@@ -453,6 +651,7 @@
             right: 24px;
             line-height: 1;
         }
+
         .step-label {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -460,6 +659,7 @@
             opacity: 0.45;
             margin-bottom: 12px;
         }
+
         .step-title {
             font-size: 1rem;
             font-weight: 900;
@@ -467,8 +667,13 @@
             letter-spacing: 1px;
             margin-bottom: 10px;
         }
-        .step-desc { font-size: 0.85rem; opacity: 0.7; line-height: 1.7; }
- 
+
+        .step-desc {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
         /* ── Testimonials ── */
         .testimonials-grid {
             display: grid;
@@ -476,6 +681,7 @@
             gap: 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .testimonial {
             padding: 50px 40px;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -484,7 +690,11 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .testimonial:nth-child(3n) { border-right: none; }
+
+        .testimonial:nth-child(3n) {
+            border-right: none;
+        }
+
         .testimonial-quote {
             font-size: 0.95rem;
             line-height: 1.85;
@@ -492,11 +702,34 @@
             font-style: italic;
             margin-bottom: 28px;
         }
-        .testimonial-quote::before { content: '\201C'; font-size: 1.4rem; opacity: 0.4; }
-        .testimonial-quote::after { content: '\201D'; font-size: 1.4rem; opacity: 0.4; }
-        .testimonial-author { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; }
-        .testimonial-role { font-size: 0.7rem; opacity: 0.35; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
- 
+
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 1.4rem;
+            opacity: 0.4;
+        }
+
+        .testimonial-quote::after {
+            content: '\201D';
+            font-size: 1.4rem;
+            opacity: 0.4;
+        }
+
+        .testimonial-author {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+        }
+
+        .testimonial-role {
+            font-size: 0.7rem;
+            opacity: 0.35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
         .stats-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -504,20 +737,46 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             margin-top: 0;
         }
+
         .stat-item {
             padding: 48px 30px;
             text-align: center;
             border-right: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .stat-item:last-child { border-right: none; }
-        .stat-num { font-size: 3rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 8px; }
-        .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; opacity: 0.5; }
- 
-        /* ── FAQ Section ── */
-        .faq-list { max-width: 800px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.12); }
 
-        .faq-item:last-child { border-bottom: none; }
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.5;
+        }
+
+        /* ── FAQ Section ── */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
         .faq-question {
             width: 100%;
             background: none;
@@ -536,8 +795,14 @@
             gap: 20px;
             transition: background 0.2s;
         }
-        .faq-question:hover { background: rgba(255,255,255,0.03); }
-        .faq-question[aria-expanded="true"] { background: rgba(255,255,255,0.04); }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-question[aria-expanded="true"] {
+            background: rgba(255, 255, 255, 0.04);
+        }
 
         .faq-icon {
             font-size: 1.4rem;
@@ -545,29 +810,41 @@
             transition: transform 0.3s;
             flex-shrink: 0;
         }
-        .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(45deg);
+        }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.3s;
             padding: 0 32px;
         }
+
         .faq-answer.open {
             max-height: 400px;
             padding: 0 32px 28px;
         }
-        .faq-answer p { font-size: 0.9rem; opacity: 0.75; line-height: 1.8; }
- 
+
+        .faq-answer p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.8;
+        }
+
         /* ── Partner / CTA strip ── */
         .cta-strip {
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .cta-block {
             padding: 80px 50px;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
+
         .cta-eyebrow {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -575,6 +852,7 @@
             opacity: 0.45;
             margin-bottom: 16px;
         }
+
         .cta-heading {
             font-size: clamp(1.6rem, 3vw, 2.2rem);
             font-weight: 900;
@@ -583,20 +861,29 @@
             margin-bottom: 18px;
             line-height: 1.15;
         }
-        .cta-text { font-size: 0.9rem; opacity: 0.7; line-height: 1.75; margin-bottom: 36px; }
- 
+
+        .cta-text {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+
         /* ── Modals ── */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(5px);
         }
+
         .modal-content {
             background-color: var(--modal-bg);
             padding: 50px;
@@ -607,38 +894,101 @@
             max-height: 85vh;
             overflow-y: auto;
         }
-        .close-btn { position: absolute; top: 15px; right: 25px; color: var(--text-color); font-size: 30px; cursor: pointer; transition: transform 0.3s; background: none; border: none; }
-        .close-btn:hover { transform: scale(1.2); }
-        .modal h2 { text-transform: uppercase; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 15px; }
-        .modal p { margin-bottom: 20px; font-size: 1rem; opacity: 0.9; line-height: 1.8;}
-        .modal-email-link { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
-        .modal-email-link:hover { border-bottom: 1px solid var(--accent-color); }
-        .modal h2 { color: var(--text-color); }
- 
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: var(--text-color);
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .modal h2 {
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .modal-email-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .modal-email-link:hover {
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .modal h2 {
+            color: var(--text-color);
+        }
+
         /* ── Contact ── */
         #contact {
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('map-background-optimized.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('map-background-optimized.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        .contact-form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; position: relative; z-index: 2; }
-        .form-group { display: flex; flex-direction: column; }
-        .form-group label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; opacity: 0.8; }
-        .contact-form input, .contact-form textarea, .contact-form select {
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            opacity: 0.8;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
             padding: 18px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             color: white;
             font-size: 1rem;
             backdrop-filter: blur(4px);
         }
-        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
             outline: none;
             border-color: var(--text-color);
         }
+
         .btn {
             background: var(--text-color);
             color: var(--bg-color);
@@ -649,27 +999,89 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); }
- 
-        .status-msg { display: none; padding: 15px; margin-bottom: 20px; text-align: center; font-weight: bold; position: relative; z-index: 2; border-radius: 4px; }
-        .success { background: var(--accent-color); color: white; }
-        .error { background: var(--error-color); color: white; }
- 
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .status-msg {
+            display: none;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .error {
+            background: var(--error-color);
+            color: white;
+        }
+
         /* ── Map embed ── */
-        #map-section { padding: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .map-embed { width: 100%; height: 320px; display: block; border: none; filter: grayscale(100%) invert(92%) contrast(0.88); }
- 
+        #map-section {
+            padding: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 320px;
+            display: block;
+            border: none;
+            filter: grayscale(100%) invert(92%) contrast(0.88);
+        }
+
         /* ── Footer ── */
-        footer { padding: 80px 10% 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); background: var(--bg-color); position: relative; z-index: 2; text-align: center; }
-        .footer-logo { height: 50px; margin-bottom: 20px; }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
+        footer {
+            padding: 80px 10% 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-color);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
         .social-links a {
-            width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, 0.3);
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none; color: var(--text-color); transition: 0.3s;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: 0.3s;
             border-radius: 50%;
         }
-        .social-links a:hover { background: white; color: black; transform: translateY(-3px); }
+
+        .social-links a:hover {
+            background: white;
+            color: black;
+            transform: translateY(-3px);
+        }
+
         .footer-legal {
             margin-top: 30px;
             display: flex;
@@ -677,6 +1089,7 @@
             gap: 24px;
             flex-wrap: wrap;
         }
+
         .footer-legal a {
             color: var(--muted);
             font-size: 0.72rem;
@@ -685,27 +1098,64 @@
             letter-spacing: 1px;
             transition: color 0.3s;
         }
-        .footer-legal a:hover { color: var(--text-color); }
- 
+
+        .footer-legal a:hover {
+            color: var(--text-color);
+        }
+
         /* ── Animations ── */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
- 
+
         /* ── Responsive ── */
         @media (max-width: 1200px) {
-            .grid.team-grid { grid-template-columns: repeat(2, 1fr); }
+            .grid.team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 900px) {
-            .mvv-row { grid-template-columns: 1fr; }
-            .mvv-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-            .how-it-works { flex-direction: column; }
-            .step { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-            .step:last-child { border-bottom: none; }
-            .stats-row { grid-template-columns: 1fr; }
-            .stat-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+            .mvv-row {
+                grid-template-columns: 1fr;
+            }
+
+            .mvv-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .how-it-works {
+                flex-direction: column;
+            }
+
+            .step {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .step:last-child {
+                border-bottom: none;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
         }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -718,491 +1168,679 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 padding: 20px 0;
             }
-            .nav-links.active { display: flex; }
-            .nav-links li a { margin-left: 0; display: block; padding: 12px 8%; }
-            .hamburger { display: flex; }
-            .hero h1 { font-size: 3.5rem; }
-            .section { padding: 60px 5%; }
-            #contact { background-attachment: scroll; }
-            .grid.team-grid { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: 1fr 1fr; }
-            .testimonials-grid { grid-template-columns: 1fr; }
-            .testimonial { border-right: none; }
-            .value-item { border-right: 1px solid rgba(255, 255, 255, 0.2); }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-item { border-right: none; }
-            #cookieBanner { flex-direction: column; text-align: center; }
-            .cookie-actions { justify-content: center; }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li a {
+                margin-left: 0;
+                display: block;
+                padding: 12px 8%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            #contact {
+                background-attachment: scroll;
+            }
+
+            .grid.team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial {
+                border-right: none;
+            }
+
+            .value-item {
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item {
+                border-right: none;
+            }
+
+            #cookieBanner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-actions {
+                justify-content: center;
+            }
         }
+
         @media (max-width: 480px) {
-            .values-grid { grid-template-columns: 1fr; }
-            .value-item { border-right: none; }
-            .hero-cta { flex-direction: column; align-items: center; }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-item {
+                border-right: none;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
+
 <body>
- 
-    <a href="#main-content" class="skip-link">Skip to main content</a>
- 
+
+    <a title="Skip to main content" href="#main-content" class="skip-link">Skip to main content</a>
+
     <div id="cookieBanner" role="region" aria-label="Cookie consent">
         <p>
-            We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies in accordance with South Africa's
+            We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies
+            in accordance with South Africa's
             <strong>POPIA</strong> (Protection of Personal Information Act).
-            <a href="#privacy" onclick="openLegal('privacy')">Privacy Policy</a> · <a href="#terms" onclick="openLegal('terms')">Terms of Use</a>
+            <a title="Privacy Policy" href="#privacy" onclick="openLegal('privacy')">Privacy Policy</a> · <a
+                title="Terms of Use" href="#terms" onclick="openLegal('terms')">Terms of Use</a>
         </p>
         <div class="cookie-actions">
             <button class="cookie-btn decline" onclick="dismissCookies()">Decline</button>
             <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
         </div>
     </div>
- 
+
     <nav aria-label="Main navigation">
         <div class="logo-container">
-            <a href="#home">
-                <img src="ridebox-logo.png" alt="Ridebox Logo" class="company-logo" width="45" height="45">
+            <a title="Home" href="#home">
+                <img title="Ridebox Logo" src="ridebox-logo.png" alt="Ridebox Logo" class="company-logo" width="45" height="45">
                 <div class="logo-text">RIDEBOX</div>
             </a>
         </div>
         <div style="display: flex; gap: 15px; align-items: center;">
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#product">The Kiosk</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#company">Venture</a></li>
-            <li><a href="#founders">Leadership</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a title="Home" href="#home">Home</a></li>
+            <li><a title="The Kiosk" href="#product">The Kiosk</a></li>
+            <li><a title="About" href="#about">About</a></li>
+            <li><a title="Services" href="#services">Services</a></li>
+            <li><a title="Venture" href="#company">Venture</a></li>
+            <li><a title="Leadership" href="#founders">Leadership</a></li>
+            <li><a title="FAQ" href="#faq">FAQ</a></li>
+            <li><a title="Contact" href="#contact">Contact</a></li>
         </ul>
     </nav>
- 
+
     <header id="home" class="hero">
-        <img src="ridebox-logo.png" alt="Ridebox Logo" class="hero-logo" width="120" height="120">
+        <img title="Ridebox Logo" src="ridebox-logo.png" alt="Ridebox Logo" class="hero-logo" width="120" height="120">
         <h1>RIDEBOX</h1>
         <div class="status-pill">Pre-Launch · Pilot in preparation · Cape Town</div>
         <p class="tagline">ADVANCING SOUTH AFRICA'S MOBILITY</p>
         <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/O2RltgcBMiQ" title="Ridebox Video Presentation" allowfullscreen loading="lazy"></iframe>
-</div>
+            <iframe src="https://www.youtube.com/embed/O2RltgcBMiQ" title="Ridebox Video Presentation" allowfullscreen
+                loading="lazy"></iframe>
+        </div>
         <div class="hero-cta">
-            <a href="#contact" class="btn-primary">Get In Touch</a>
-            <a href="#product" class="btn-outline">Explore Our Hardware</a>
+            <a title="Contact Us" href="#contact" class="btn-primary">Get In Touch</a>
+            <a title="Our Product" href="#product" class="btn-outline">Explore Our Hardware</a>
         </div>
     </header>
- 
+
     <main id="main-content">
 
-    <section id="product" class="section">
-        <h2 class="section-title">The Hardware</h2>
-        <p class="section-subtitle">Engineered for South African Conditions</p>
-        
-        <div class="hardware-category">
-            <h3 class="hardware-heading">Phase 1: Core Integration</h3>
-            <p class="hardware-desc">These are the primary units we are rolling out first. We designed them to be compact, incredibly tough, and easy to drop into busy areas like campuses and mall entrances. They give people immediate, safe access to rides without taking up too much pavement.</p>
-            <div class="product-gallery focused">
-                <img src="RideBox Kiosk-2.jpeg" alt="Ridebox Enclosed Seating Kiosk" loading="lazy">
-                <img src="RideBox Kiosk-3.jpeg" alt="Ridebox Standalone Touchscreen Kiosk" loading="lazy">
-            </div>
-        </div>
+        <section id="product" class="section">
+            <h2 class="section-title">The Hardware</h2>
+            <p class="section-subtitle">Engineered for South African Conditions</p>
 
-        <div class="hardware-category">
-            <h3 class="hardware-heading">Projected Update: The Transit Shelter</h3>
-            <p class="hardware-desc">Looking a bit further down the roadmap, we plan to introduce these larger multi-screen hubs. They are meant for major transport nodes where people might need to wait a little longer, offering actual shelter from the elements, comfortable seating, and extra screen space.</p>
-            <div class="product-gallery single">
-                <img src="RideBox Kiosk-1.jpeg" alt="Ridebox Multi-Screen Bus Shelter Kiosk" loading="lazy">
+            <div class="hardware-category">
+                <h3 class="hardware-heading">Phase 1: Core Integration</h3>
+                <p class="hardware-desc">These are the primary units we are rolling out first. We designed them to be
+                    compact, incredibly tough, and easy to drop into busy areas like campuses and mall entrances. They
+                    give people immediate, safe access to rides without taking up too much pavement.</p>
+                <div class="product-gallery focused">
+                    <img title="Ridebox Enclosed Seating Kiosk" src="RideBox Kiosk-2.jpeg" alt="Ridebox Enclosed Seating Kiosk" loading="lazy">
+                    <img title="Ridebox Standalone Touchscreen Kiosk" src="RideBox Kiosk-3.jpeg" alt="Ridebox Standalone Touchscreen Kiosk" loading="lazy">
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section id="about" class="section">
-        <h2 class="section-title">Our Story</h2>
-        <p class="section-subtitle">Who We Are & What We Stand For</p>
- 
-        <div class="about-intro">
-            <p>
-                RideBox was born from a simple frustration: South Africa's e-hailing landscape left too many people vulnerable to load shedding, unsafe rides, and unpredictable pricing. Two CPUT founders (a graduate and a final-year student) from Soweto and Port Elizabeth decided to change that. Built on solar power and a commitment to community safety, RideBox is rewriting the rules of urban mobility by bridging the last-mile communication gap.
-            </p>
-        </div>
- 
-        <div class="mvv-row">
-            <div class="mvv-item">
-                <div class="mvv-label">Mission</div>
-                <div class="mvv-text">To deliver safe, affordable, and energy-independent e-hailing access to every South African, ensuring that a lack of smartphone access, data, or power never leaves you stranded.</div>
+            <div class="hardware-category">
+                <h3 class="hardware-heading">Projected Update: The Transit Shelter</h3>
+                <p class="hardware-desc">Looking a bit further down the roadmap, we plan to introduce these larger
+                    multi-screen hubs. They are meant for major transport nodes where people might need to wait a little
+                    longer, offering actual shelter from the elements, comfortable seating, and extra screen space.</p>
+                <div class="product-gallery single">
+                    <img title="Ridebox Multi-Screen Bus Shelter Kiosk" src="RideBox Kiosk-1.jpeg" alt="Ridebox Multi-Screen Bus Shelter Kiosk" loading="lazy">
+                </div>
             </div>
-            <div class="mvv-item">
-                <div class="mvv-label">Vision</div>
-                <div class="mvv-text">A South Africa where clean, connected mobility is a right not a privilege powered entirely by renewable energy.</div>
-            </div>
-        </div>
- 
-        <h3 class="sub-heading" style="border-top: none; margin-top: 0;">Core Values</h3>
-        <div class="values-grid">
-            <div class="value-item">
-                <div class="value-number">01</div>
-                <div class="value-title">Safety First</div>
-                <div class="value-desc">Every product decision is weighed against passenger and driver safety. Designed around vetted drivers, facial verification technology, SOS panic buttons, and real-time oversight to ensure every trip is secure.</div>
-            </div>
-            <div class="value-item">
-                <div class="value-number">02</div>
-                <div class="value-title">Energy Independence</div>
-                <div class="value-desc">We refuse to be held hostage by the grid. Our solar-first infrastructure keeps you moving smoothly through any load shedding stage or local power outage.</div>
-            </div>
-            <div class="value-item">
-                <div class="value-number">03</div>
-                <div class="value-title">Community Impact</div>
-                <div class="value-desc">We hire locally, operate transparently, and continuously reinvest in the communities we serve, bridging the gap between townships and major tourism corridors.</div>
-            </div>
-            <div class="value-item">
-                <div class="value-number">04</div>
-                <div class="value-title">Radical Accessibility</div>
-                <div class="value-desc">Designed to support all 11 official languages, with regulated fares and clear booking instructions to ensure that RideBox works for everyone, even those without access to a smartphone.</div>
-            </div>
-        </div>
-    </section>
- 
-    <section id="services" class="section">
-        <h2 class="section-title">What We Offer</h2>
-        <p class="section-subtitle">The RideBox Product & Platform</p>
- 
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-num">01</div>
-                <div class="service-title">Solar-Powered Hubs</div>
-                <div class="service-desc">Physical RideBox units are planned for deployment at airports, malls, universities, and public transport nodes. Each unit is designed to run on embedded solar arrays and lithium battery backups, providing operational capacity during power grid interruptions.</div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">02</div>
-                <div class="service-title">Secure E-Hailing</div>
-                <div class="service-desc">Designed to operate a vetted driver network featuring facial verification and dedicated SOS panic buttons. The platform is designed to support all 11 official languages via an intuitive AI interface, with a fixed-fare approach to minimise surprise pricing.</div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">03</div>
-                <div class="service-title">Tourist Protection</div>
-                <div class="service-desc">Dedicated lanes and pre-screened drivers at major airports will help protect visitors from scams and unauthorised drivers. The platform will handle currency conversions and compare prices across platforms to support fair, market-rate rides.</div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">04</div>
-                <div class="service-title">Driver Programmes</div>
-                <div class="service-desc">We plan to invite drivers to join our network and benefit from transparent earning structures, ongoing training support, and access to a national route network across our planned pilot locations.</div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">05</div>
-                <div class="service-title">Enterprise Partnerships</div>
-                <div class="service-desc">We actively collaborate with municipalities, academic institutions, and corporate campuses to seamlessly integrate RideBox hubs into their existing transport infrastructure without adding any burden to the local power grid.</div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">06</div>
-                <div class="service-title">Franchise Opportunities</div>
-                <div class="service-desc">Local operators can own and deploy a RideBox unit in their city. Our franchise model allows partners to manage hubs while generating passive revenue from the high-visibility digital advertising screens built into every kiosk.</div>
-            </div>
-        </div>
- 
-        <h3 class="sub-heading" style="border-top: none; margin-top: 0;">How It Works</h3>
-        <div class="how-it-works">
-            <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-label">Step One</div>
-                <div class="step-title">Find a Hub</div>
-                <div class="step-desc">Locate your nearest RideBox unit at a major airport, shopping mall, or public transport node, or simply book your ride through our mobile app.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-label">Step Two</div>
-                <div class="step-title">Book a Ride</div>
-                <div class="step-desc">Select your destination, confirm the fixed upfront fare, and get matched with a fully vetted RideBox driver in just a matter of minutes.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-label">Step Three</div>
-                <div class="step-title">Travel Safely</div>
-                <div class="step-desc">Enjoy your journey with total peace of mind. Every trip is actively tracked, drivers are thoroughly screened, and emergency support is always a tap away.</div>
-            </div>
-            <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-label">Step Four</div>
-                <div class="step-title">Rate & Repeat</div>
-                <div class="step-desc">Provide your feedback to help us maintain our rigorous service standards, and earn loyalty credits toward your future trips.</div>
-            </div>
-        </div>
-    </section>
- 
-    <section id="company" class="section">
-        <h2 class="section-title">The Strategy</h2>
-        <div class="grid">
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('unitsModal')" onkeydown="if(event.key==='Enter')openModal('unitsModal')"><h3>21</h3><p>PLANNED UNITS</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('gridModal')" onkeydown="if(event.key==='Enter')openModal('gridModal')"><h3>0%</h3><p>GRID DEPENDENCY</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('secureModal')" onkeydown="if(event.key==='Enter')openModal('secureModal')"><h3>SECURE</h3><p>E-HAILING ACCESS</p></div>
-        </div>
-    </section>
- 
-    <section id="testimonials" class="section">
-        <h2 class="section-title">Building With Our Community</h2>
-        <p class="section-subtitle">Pre-Launch Engagement Across the Ecosystem</p>
+        </section>
 
-        <div class="stats-row" style="border-bottom: none; margin-bottom: 0; border: 1px solid rgba(255, 255, 255, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
-            <div class="stat-item">
-                <div class="stat-num">21</div>
-                <div class="stat-label">Planned Locations</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">0%</div>
-                <div class="stat-label">Grid Dependency</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">—</div>
-                <div class="stat-label">Vetted Driver Network</div>
-                <div style="font-size:0.8rem;opacity:0.7;margin-top:6px">Onboarding programme designed with fleet partners</div>
-            </div>
-        </div>
+        <section id="about" class="section">
+            <h2 class="section-title">Our Story</h2>
+            <p class="section-subtitle">Who We Are & What We Stand For</p>
 
-        <div class="testimonials-grid" style="border-top: none;">
-            <div class="testimonial card">
-                <h3 style="font-size:1.15rem;margin-bottom:10px">Sites &amp; Locations</h3>
-                <p class="testimonial-quote">Active engagement with major transit hubs and academic institutions across Cape Town to host the first RideBox pilot deployment.</p>
+            <div class="about-intro">
+                <p>
+                    RideBox was born from a simple frustration: South Africa's e-hailing landscape left too many people
+                    vulnerable to load shedding, unsafe rides, and unpredictable pricing. Two CPUT founders (a graduate
+                    and a final-year student) from Soweto and Port Elizabeth decided to change that. Built on solar
+                    power and a commitment to community safety, RideBox is rewriting the rules of urban mobility by
+                    bridging the last-mile communication gap.
+                </p>
             </div>
-            <div class="testimonial card">
-                <h3 style="font-size:1.15rem;margin-bottom:10px">Driver Network</h3>
-                <p class="testimonial-quote">Established relationships with local fleet owners who provide the foundation for our vetted driver onboarding programme at launch.</p>
-            </div>
-            <div class="testimonial card">
-                <h3 style="font-size:1.15rem;margin-bottom:10px">Platform Partners</h3>
-                <p class="testimonial-quote">Ongoing partnership conversations with leading e-hailing platforms to host their booking infrastructure on RideBox kiosks.</p>
-            </div>
-        </div>
-    </section>
- 
-    <section id="founders" class="section">
-        <h2 class="section-title">Leadership</h2>
-        <div class="grid">
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('dumisaneModal')" onkeydown="if(event.key==='Enter')openModal('dumisaneModal')"><h4>Dumisane Zikalala</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & TECH LEAD</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('aluluthoModal')" onkeydown="if(event.key==='Enter')openModal('aluluthoModal')"><h4>Alulutho Mbangela</h4><p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & STRATEGY</p></div>
-        </div>
- 
-        <h3 class="sub-heading">Core Team</h3>
-        <div class="grid team-grid">
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('reganModal')" onkeydown="if(event.key==='Enter')openModal('reganModal')"><h4>Regan</h4><p style="opacity: 0.6; font-size: 0.8rem;">PROJECT MANAGER</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('jonathanModal')" onkeydown="if(event.key==='Enter')openModal('jonathanModal')"><h4>Jonathan</h4><p style="opacity: 0.6; font-size: 0.8rem;">SUPERVISOR</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('kyleModal')" onkeydown="if(event.key==='Enter')openModal('kyleModal')"><h4>Kyle</h4><p style="opacity: 0.6; font-size: 0.8rem;">HEAD OF MARKETING</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('tebogoModal')" onkeydown="if(event.key==='Enter')openModal('tebogoModal')"><h4>Tebogo-P</h4><p style="opacity: 0.6; font-size: 0.8rem;">WEB DEVELOPER</p></div>
-            <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('siphokaziModal')" onkeydown="if(event.key==='Enter')openModal('siphokaziModal')"><h4>Siphokazi</h4><p style="opacity: 0.6; font-size: 0.8rem;">OPERATIONS &amp; LOGISTICS MANAGER</p></div>
-        </div>
-    </section>
- 
-    <section id="partner" class="section">
-        <h2 class="section-title">Get Involved</h2>
-        <div class="cta-strip">
-            <div class="cta-block">
-                <div class="cta-eyebrow">For Investors & Municipalities</div>
-                <div class="cta-heading">Partner<br>With Us</div>
-                <p class="cta-text">Deploy a RideBox hub in your city, campus, or commercial precinct. You can easily request a pitch deck or schedule an in-depth demo with our founding team to explore the opportunities.</p>
-                <a href="#contact" class="btn-outline" style="border-color:var(--text-color); color:var(--text-color);">Request a Demo</a>
-            </div>
-        </div>
-    </section>
- 
-    <section id="faq" class="section">
-        <h2 class="section-title">FAQ</h2>
-        <p class="section-subtitle">Common Questions, Answered Directly</p>
- 
-        <div class="faq-list" role="list">
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    What is RideBox and how does it differ from Uber or Bolt?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>RideBox is a solar-powered e-hailing platform built for South African conditions. Unlike app-only competitors, RideBox operates physical booking hubs that work without internet or electricity — meaning you can book a safe, regulated ride even during heavy load shedding. We also use fixed fares with absolutely no surge pricing.</p>
+
+            <div class="mvv-row">
+                <div class="mvv-item">
+                    <div class="mvv-label">Mission</div>
+                    <div class="mvv-text">To deliver safe, affordable, and energy-independent e-hailing access to every
+                        South African, ensuring that a lack of smartphone access, data, or power never leaves you
+                        stranded.</div>
+                </div>
+                <div class="mvv-item">
+                    <div class="mvv-label">Vision</div>
+                    <div class="mvv-text">A South Africa where clean, connected mobility is a right not a privilege
+                        powered entirely by renewable energy.</div>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    How does RideBox work during load shedding?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>Each RideBox unit is designed to be equipped with embedded solar arrays and lithium battery storage. Our hubs are designed to operate independently of the grid, charging during daylight and providing operational capacity through power interruptions. If local connectivity is reduced, units will use a low-bandwidth cellular fallback to help maintain service.</p>
+
+            <h3 class="sub-heading" style="border-top: none; margin-top: 0;">Core Values</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-number">01</div>
+                    <div class="value-title">Safety First</div>
+                    <div class="value-desc">Every product decision is weighed against passenger and driver safety.
+                        Designed around vetted drivers, facial verification technology, SOS panic buttons, and real-time
+                        oversight to ensure every trip is secure.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">02</div>
+                    <div class="value-title">Energy Independence</div>
+                    <div class="value-desc">We refuse to be held hostage by the grid. Our solar-first infrastructure
+                        keeps you moving smoothly through any load shedding stage or local power outage.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">03</div>
+                    <div class="value-title">Community Impact</div>
+                    <div class="value-desc">We hire locally, operate transparently, and continuously reinvest in the
+                        communities we serve, bridging the gap between townships and major tourism corridors.</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-number">04</div>
+                    <div class="value-title">Radical Accessibility</div>
+                    <div class="value-desc">Designed to support all 11 official languages, with regulated fares and
+                        clear booking instructions to ensure that RideBox works for everyone, even those without access
+                        to a smartphone.</div>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    Where are RideBox hubs currently located?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>We are preparing to launch a 21-unit national pilot, with our first site planned for Cape Town Station. Subsequent units will target high-traffic locations including major airports, shopping malls, and university campuses across all 9 provinces. Please reach out to our team for the latest deployment timeline or to register interest in hosting a hub.</p>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title">What We Offer</h2>
+            <p class="section-subtitle">The RideBox Product & Platform</p>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-num">01</div>
+                    <div class="service-title">Solar-Powered Hubs</div>
+                    <div class="service-desc">Physical RideBox units are planned for deployment at airports, malls,
+                        universities, and public transport nodes. Each unit is designed to run on embedded solar arrays
+                        and lithium battery backups, providing operational capacity during power grid interruptions.
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">02</div>
+                    <div class="service-title">Secure E-Hailing</div>
+                    <div class="service-desc">Designed to operate a vetted driver network featuring facial verification
+                        and dedicated SOS panic buttons. The platform is designed to support all 11 official languages
+                        via an intuitive AI interface, with a fixed-fare approach to minimise surprise pricing.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">03</div>
+                    <div class="service-title">Tourist Protection</div>
+                    <div class="service-desc">Dedicated lanes and pre-screened drivers at major airports will help
+                        protect visitors from scams and unauthorised drivers. The platform will handle currency
+                        conversions and compare prices across platforms to support fair, market-rate rides.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">04</div>
+                    <div class="service-title">Driver Programmes</div>
+                    <div class="service-desc">We plan to invite drivers to join our network and benefit from transparent
+                        earning structures, ongoing training support, and access to a national route network across our
+                        planned pilot locations.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">05</div>
+                    <div class="service-title">Enterprise Partnerships</div>
+                    <div class="service-desc">We actively collaborate with municipalities, academic institutions, and
+                        corporate campuses to seamlessly integrate RideBox hubs into their existing transport
+                        infrastructure without adding any burden to the local power grid.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-num">06</div>
+                    <div class="service-title">Franchise Opportunities</div>
+                    <div class="service-desc">Local operators can own and deploy a RideBox unit in their city. Our
+                        franchise model allows partners to manage hubs while generating passive revenue from the
+                        high-visibility digital advertising screens built into every kiosk.</div>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    How are RideBox drivers screened?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>Our driver onboarding process is designed to include comprehensive vetting, such as criminal background checks, vehicle roadworthiness inspections, and platform onboarding assessments. Drivers will be continuously rated by passengers, and our operations team plans regular compliance reviews. Every booking will utilise facial verification to help ensure maximum protection.</p>
+
+            <h3 class="sub-heading" style="border-top: none; margin-top: 0;">How It Works</h3>
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-label">Step One</div>
+                    <div class="step-title">Find a Hub</div>
+                    <div class="step-desc">Locate your nearest RideBox unit at a major airport, shopping mall, or public
+                        transport node, or simply book your ride through our mobile app.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-label">Step Two</div>
+                    <div class="step-title">Book a Ride</div>
+                    <div class="step-desc">Select your destination, confirm the fixed upfront fare, and get matched with
+                        a fully vetted RideBox driver in just a matter of minutes.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-label">Step Three</div>
+                    <div class="step-title">Travel Safely</div>
+                    <div class="step-desc">Enjoy your journey with total peace of mind. Every trip is actively tracked,
+                        drivers are thoroughly screened, and emergency support is always a tap away.</div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-label">Step Four</div>
+                    <div class="step-title">Rate & Repeat</div>
+                    <div class="step-desc">Provide your feedback to help us maintain our rigorous service standards, and
+                        earn loyalty credits toward your future trips.</div>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    What are the fares and is there surge pricing?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>RideBox operates strictly on a fixed-fare model. The price you see before you confirm your booking is the exact price you will pay. There are no surge multipliers, no hidden fees, and no last-minute changes. For international tourists, our system automatically handles currency conversions and compares regional prices to guarantee a fair market rate.</p>
+        </section>
+
+        <section id="company" class="section">
+            <h2 class="section-title">The Strategy</h2>
+            <div class="grid">
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('unitsModal')"
+                    onkeydown="if(event.key==='Enter')openModal('unitsModal')">
+                    <h3>21</h3>
+                    <p>PLANNED UNITS</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('gridModal')"
+                    onkeydown="if(event.key==='Enter')openModal('gridModal')">
+                    <h3>0%</h3>
+                    <p>GRID DEPENDENCY</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('secureModal')"
+                    onkeydown="if(event.key==='Enter')openModal('secureModal')">
+                    <h3>SECURE</h3>
+                    <p>E-HAILING ACCESS</p>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    How can my organisation partner with RideBox?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>We partner heavily with municipalities, universities, airports, and commercial property owners to seamlessly deploy RideBox hubs within their existing transport infrastructure. Our partnerships are highly flexible, ranging from sponsored corporate hubs to full franchise agreements where operators can earn additional income from the integrated ad screens.</p>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2 class="section-title">Building With Our Community</h2>
+            <p class="section-subtitle">Pre-Launch Engagement Across the Ecosystem</p>
+
+            <div class="stats-row"
+                style="border-bottom: none; margin-bottom: 0; border: 1px solid rgba(255, 255, 255, 0.2); border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+                <div class="stat-item">
+                    <div class="stat-num">21</div>
+                    <div class="stat-label">Planned Locations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">0%</div>
+                    <div class="stat-label">Grid Dependency</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">—</div>
+                    <div class="stat-label">Vetted Driver Network</div>
+                    <div style="font-size:0.8rem;opacity:0.7;margin-top:6px">Onboarding programme designed with fleet
+                        partners</div>
                 </div>
             </div>
- 
-            <div class="faq-item" role="listitem">
-                <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-                    Is my personal information safe with RideBox?
-                    <span class="faq-icon" aria-hidden="true">+</span>
-                </button>
-                <div class="faq-answer" role="region">
-                    <p>Absolutely. RideBox complies strictly with the Protection of Personal Information Act (POPIA). We only collect the necessary data to operate the service effectively, we store it securely, and we never sell it to third parties. You can request access to, or the deletion of, your personal data at any time by contacting our support team.</p>
+
+            <div class="testimonials-grid" style="border-top: none;">
+                <div class="testimonial card">
+                    <h3 style="font-size:1.15rem;margin-bottom:10px">Sites &amp; Locations</h3>
+                    <p class="testimonial-quote">Active engagement with major transit hubs and academic institutions
+                        across Cape Town to host the first RideBox pilot deployment.</p>
+                </div>
+                <div class="testimonial card">
+                    <h3 style="font-size:1.15rem;margin-bottom:10px">Driver Network</h3>
+                    <p class="testimonial-quote">Established relationships with local fleet owners who provide the
+                        foundation for our vetted driver onboarding programme at launch.</p>
+                </div>
+                <div class="testimonial card">
+                    <h3 style="font-size:1.15rem;margin-bottom:10px">Platform Partners</h3>
+                    <p class="testimonial-quote">Ongoing partnership conversations with leading e-hailing platforms to
+                        host their booking infrastructure on RideBox kiosks.</p>
                 </div>
             </div>
- 
-        </div>
-    </section>
- 
-    <section id="contact" class="section">
-        <h2 class="section-title">Connect</h2>
-        <div id="statusMsg" class="status-msg" role="alert"></div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkopyprj" method="POST">
+        </section>
+
+        <section id="founders" class="section">
+            <h2 class="section-title">Leadership</h2>
+            <div class="grid">
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('dumisaneModal')"
+                    onkeydown="if(event.key==='Enter')openModal('dumisaneModal')">
+                    <h4>Dumisane Zikalala</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & TECH LEAD</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('aluluthoModal')"
+                    onkeydown="if(event.key==='Enter')openModal('aluluthoModal')">
+                    <h4>Alulutho Mbangela</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">CO-FOUNDER & STRATEGY</p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading">Core Team</h3>
+            <div class="grid team-grid">
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('reganModal')"
+                    onkeydown="if(event.key==='Enter')openModal('reganModal')">
+                    <h4>Regan</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">PROJECT MANAGER</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('jonathanModal')"
+                    onkeydown="if(event.key==='Enter')openModal('jonathanModal')">
+                    <h4>Jonathan</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">SUPERVISOR</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('kyleModal')"
+                    onkeydown="if(event.key==='Enter')openModal('kyleModal')">
+                    <h4>Kyle</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">HEAD OF MARKETING</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openModal('tebogoModal')"
+                    onkeydown="if(event.key==='Enter')openModal('tebogoModal')">
+                    <h4>Tebogo Pii</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">WEB DEVELOPER</p>
+                </div>
+                <div class="card" role="button" tabindex="0" aria-haspopup="dialog"
+                    onclick="openModal('siphokaziModal')"
+                    onkeydown="if(event.key==='Enter')openModal('siphokaziModal')">
+                    <h4>Siphokazi</h4>
+                    <p style="opacity: 0.6; font-size: 0.8rem;">OPERATIONS &amp; LOGISTICS MANAGER</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="partner" class="section">
+            <h2 class="section-title">Get Involved</h2>
+            <div class="cta-strip">
+                <div class="cta-block">
+                    <div class="cta-eyebrow">For Investors & Municipalities</div>
+                    <div class="cta-heading">Partner<br>With Us</div>
+                    <p class="cta-text">Deploy a RideBox hub in your city, campus, or commercial precinct. You can
+                        easily request a pitch deck or schedule an in-depth demo with our founding team to explore the
+                        opportunities.</p>
+                    <a href="#contact" class="btn-outline"
+                        style="border-color:var(--text-color); color:var(--text-color);">Request a Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2 class="section-title">FAQ</h2>
+            <p class="section-subtitle">Common Questions, Answered Directly</p>
+
+            <div class="faq-list" role="list">
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        What is RideBox and how does it differ from Uber or Bolt?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>RideBox is a solar-powered e-hailing platform built for South African conditions. Unlike
+                            app-only competitors, RideBox operates physical booking hubs that work without internet or
+                            electricity — meaning you can book a safe, regulated ride even during heavy load shedding.
+                            We also use fixed fares with absolutely no surge pricing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        How does RideBox work during load shedding?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Each RideBox unit is designed to be equipped with embedded solar arrays and lithium battery
+                            storage. Our hubs are designed to operate independently of the grid, charging during
+                            daylight and providing operational capacity through power interruptions. If local
+                            connectivity is reduced, units will use a low-bandwidth cellular fallback to help maintain
+                            service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        Where are RideBox hubs currently located?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>We are preparing to launch a 21-unit national pilot, with our first site planned for Cape
+                            Town Station. Subsequent units will target high-traffic locations including major airports,
+                            shopping malls, and university campuses across all 9 provinces. Please reach out to our team
+                            for the latest deployment timeline or to register interest in hosting a hub.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        How are RideBox drivers screened?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Our driver onboarding process is designed to include comprehensive vetting, such as criminal
+                            background checks, vehicle roadworthiness inspections, and platform onboarding assessments.
+                            Drivers will be continuously rated by passengers, and our operations team plans regular
+                            compliance reviews. Every booking will utilise facial verification to help ensure maximum
+                            protection.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        What are the fares and is there surge pricing?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>RideBox operates strictly on a fixed-fare model. The price you see before you confirm your
+                            booking is the exact price you will pay. There are no surge multipliers, no hidden fees, and
+                            no last-minute changes. For international tourists, our system automatically handles
+                            currency conversions and compares regional prices to guarantee a fair market rate.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        How can my organisation partner with RideBox?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>We partner heavily with municipalities, universities, airports, and commercial property
+                            owners to seamlessly deploy RideBox hubs within their existing transport infrastructure. Our
+                            partnerships are highly flexible, ranging from sponsored corporate hubs to full franchise
+                            agreements where operators can earn additional income from the integrated ad screens.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+                        Is my personal information safe with RideBox?
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <p>Absolutely. RideBox complies strictly with the Protection of Personal Information Act
+                            (POPIA). We only collect the necessary data to operate the service effectively, we store it
+                            securely, and we never sell it to third parties. You can request access to, or the deletion
+                            of, your personal data at any time by contacting our support team.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Connect</h2>
+            <div id="statusMsg" class="status-msg" role="alert"></div>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkopyprj" method="POST">
                 <p style="display:none"><label>Don't fill this: <input name="_gotcha"></label></p>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-                <label for="inquiry">Inquiry Type</label>
-                <select id="inquiry" name="inquiry">
-                    <option value="general">General Inquiry</option>
-                    <option value="partner">Partnership / Municipality</option>
-                    <option value="investor">Investment / Pitch Deck</option>
-                    <option value="press">Press & Media</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Inquiry</button>
-        </form>
-    </section>
- 
-    <div id="map-section">
-        <iframe
-            class="map-embed"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105329.47780285714!2d18.42322!3d-33.92584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc500f8826ebb7%3A0x687fe1fc2828aa87!2sCape%20Town!5e0!3m2!1sen!2sza!4v1700000000000"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="RideBox location in Cape Town, South Africa"
-            aria-label="Interactive map showing Cape Town, South Africa"
-        ></iframe>
-    </div>
- 
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="inquiry">Inquiry Type</label>
+                    <select id="inquiry" name="inquiry">
+                        <option value="general">General Inquiry</option>
+                        <option value="partner">Partnership / Municipality</option>
+                        <option value="investor">Investment / Pitch Deck</option>
+                        <option value="press">Press & Media</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Inquiry</button>
+            </form>
+        </section>
+
+        <div id="map-section">
+            <iframe class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105329.47780285714!2d18.42322!3d-33.92584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc500f8826ebb7%3A0x687fe1fc2828aa87!2sCape%20Town!5e0!3m2!1sen!2sza!4v1700000000000"
+                allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="RideBox location in Cape Town, South Africa"
+                aria-label="Interactive map showing Cape Town, South Africa"></iframe>
+        </div>
+
     </main>
-    
+
     <footer>
         <img src="ridebox-logo.png" alt="Ridebox Logo" class="footer-logo" width="50" height="50" loading="lazy">
         <p style="opacity: 0.6; font-size: 0.9rem;">© 2026 RIDEBOX | Cape Town, South Africa</p>
- 
+
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a title="Facebook" href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                    <path
+                        d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
                 </svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a title="LinkedIn" href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <a title="Twitter" href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/>
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z" />
                 </svg>
             </a>
         </div>
- 
+
         <div class="footer-legal">
-            <a href="#" onclick="openLegal('privacy'); return false;">Privacy Policy</a>
-            <a href="#" onclick="openLegal('terms'); return false;">Terms of Service</a>
-            <a href="#" onclick="openLegal('popia'); return false;">POPIA Notice</a>
-            <a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a>
+            <a title="Privacy Policy" href="#" onclick="openLegal('privacy'); return false;">Privacy Policy</a>
+            <a title="Terms of Service" href="#" onclick="openLegal('terms'); return false;">Terms of Service</a>
+            <a title="POPIA Notice" href="#" onclick="openLegal('popia'); return false;">POPIA Notice</a>
+            <a title="Email Us" href="mailto:info@rideboxapp.com">info@rideboxapp.com</a>
         </div>
     </footer>
- 
+
     <div id="unitsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="unitsModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('unitsModal')" aria-label="Close dialog">×</button>
             <h2 id="unitsModalTitle">National Deployment</h2>
-            <p>Our initial 21-unit pilot program strategically targets key locations with three units per major province, specifically positioned at high-traffic hubs to solve critical accessibility gaps. We install units at the largest provincial airports to protect tourists from being overcharged, utilizing our automated systems to handle currency conversions and ensure fair, market-rate rides.</p>
-            <p>Additionally, we target major university campuses to support students who may run out of data or battery, as well as large shopping malls to provide a safe and reliable way home for high volumes of daily foot traffic.</p>
+            <p>Our initial 21-unit pilot program strategically targets key locations with three units per major
+                province, specifically positioned at high-traffic hubs to solve critical accessibility gaps. We install
+                units at the largest provincial airports to protect tourists from being overcharged, utilizing our
+                automated systems to handle currency conversions and ensure fair, market-rate rides.</p>
+            <p>Additionally, we target major university campuses to support students who may run out of data or battery,
+                as well as large shopping malls to provide a safe and reliable way home for high volumes of daily foot
+                traffic.</p>
         </div>
     </div>
-    
+
     <div id="gridModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="gridModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('gridModal')" aria-label="Close dialog">×</button>
             <h2 id="gridModalTitle">0% Grid Dependency</h2>
-            <p>The RideBox platform is uniquely engineered to remain completely operational during severe load shedding and unexpected infrastructure failures. Each unit functions independently thanks to its built-in solar panels and robust lithium battery backups, ensuring a reliable power source regardless of the grid status.</p>
-            <p>To guarantee longevity and passenger safety, the kiosks are designed to be entirely vandal-proof. They are constructed from highly durable powder-coated steel or aluminum, feature 6-8mm tempered glass, and are secured to the ground using a heavy-duty four-bolt concrete anchor system.</p>
+            <p>The RideBox platform is uniquely engineered to remain completely operational during severe load shedding
+                and unexpected infrastructure failures. Each unit functions independently thanks to its built-in solar
+                panels and robust lithium battery backups, ensuring a reliable power source regardless of the grid
+                status.</p>
+            <p>To guarantee longevity and passenger safety, the kiosks are designed to be entirely vandal-proof. They
+                are constructed from highly durable powder-coated steel or aluminum, feature 6-8mm tempered glass, and
+                are secured to the ground using a heavy-duty four-bolt concrete anchor system.</p>
         </div>
     </div>
-    
+
     <div id="secureModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="secureModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('secureModal')" aria-label="Close dialog">×</button>
             <h2 id="secureModalTitle">Secure Access</h2>
-            <p>We prioritise secure access and are designing the platform to partner with vetted driver platforms while integrating emergency response features into our kiosks.</p>
-            <p>Each unit is designed to integrate facial verification technology to help ensure that the person booking the ride is protected. An integrated SOS panic button will provide a direct link to dedicated safety and security partners.</p>
+            <p>We prioritise secure access and are designing the platform to partner with vetted driver platforms while
+                integrating emergency response features into our kiosks.</p>
+            <p>Each unit is designed to integrate facial verification technology to help ensure that the person booking
+                the ride is protected. An integrated SOS panic button will provide a direct link to dedicated safety and
+                security partners.</p>
         </div>
     </div>
- 
+
     <div id="dumisaneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="dumisaneModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('dumisaneModal')" aria-label="Close dialog">×</button>
             <h2 id="dumisaneModalTitle">Dumisane Zikalala</h2>
-            <p>Born in Soweto, Dumisane overcame early environmental challenges to eventually graduate from the Cape Peninsula University of Technology. He co-founded RideBox with a clear vision to leverage modern technology for measurable social good, focusing on sustainable and accessible infrastructure.</p>
-            <p>Reach out directly: <a href="mailto:dumisane.zikalala@rideboxapp.com" class="modal-email-link">dumisane.zikalala@rideboxapp.com</a></p>
+            <p>Born in Soweto, Dumisane overcame early environmental challenges to eventually graduate from the Cape
+                Peninsula University of Technology. He co-founded RideBox with a clear vision to leverage modern
+                technology for measurable social good, focusing on sustainable and accessible infrastructure.</p>
+            <p>Reach out directly: <a title="Email Dumisane" href="mailto:dumisane.zikalala@rideboxapp.com"
+                    class="modal-email-link">dumisane.zikalala@rideboxapp.com</a></p>
         </div>
     </div>
-    
+
     <div id="aluluthoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="aluluthoModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('aluluthoModal')" aria-label="Close dialog">×</button>
             <h2 id="aluluthoModalTitle">Alulutho Mbangela</h2>
             <p><strong>Co-Founder & Strategy</strong></p>
             <p>Born in Kwazakhele, eBhayi</p>
-            <p>Built RideBox while studying at Cape Peninsula University of Technology (CPUT) and is currently completing his final year.</p>
+            <p>Built RideBox while studying at Cape Peninsula University of Technology (CPUT) and is currently
+                completing his final year.</p>
             <p>Focused on bridging access gaps in transport, payments, and connectivity.</p>
-            <p>Reach out directly: <a href="mailto:alulutho@rideboxapp.com" class="modal-email-link">alulutho@rideboxapp.com</a></p>
+            <p>Reach out directly: <a title="Email Alulutho" href="mailto:alulutho@rideboxapp.com"
+                    class="modal-email-link">alulutho@rideboxapp.com</a></p>
         </div>
     </div>
 
@@ -1211,8 +1849,10 @@
             <button class="close-btn" onclick="closeModal('siphokaziModal')" aria-label="Close dialog">×</button>
             <h2 id="siphokaziModalTitle">Siphokazi</h2>
             <p><strong>Operations &amp; Logistics Manager</strong></p>
-            <p>Qualified in Transportation and Logistics. Leads kiosk deployment strategy, supply chain and vendor management, and route optimisation across the rollout.</p>
-            <p>Reach out directly: <a href="mailto:siphokazi@rideboxapp.com" class="modal-email-link">siphokazi@rideboxapp.com</a></p>
+            <p>Qualified in Transportation and Logistics. Leads kiosk deployment strategy, supply chain and vendor
+                management, and route optimisation across the rollout.</p>
+            <p>Reach out directly: <a title="Email Siphokazi" href="mailto:siphokazi@rideboxapp.com"
+                    class="modal-email-link">siphokazi@rideboxapp.com</a></p>
         </div>
     </div>
 
@@ -1220,8 +1860,10 @@
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('reganModal')" aria-label="Close dialog">×</button>
             <h2 id="reganModalTitle">Regan Stevens</h2>
-            <p>As our dedicated Project Manager, Regan is responsible for meticulously managing our deployment timelines and overseeing critical technical vendor partnerships to ensure timely kiosk installations.</p>
-            <p>Reach out directly: <a href="mailto:regan@rideboxapp.com" class="modal-email-link">regan@rideboxapp.com</a></p>
+            <p>As our dedicated Project Manager, Regan is responsible for meticulously managing our deployment timelines
+                and overseeing critical technical vendor partnerships to ensure timely kiosk installations.</p>
+            <p>Reach out directly: <a title="Email Regan" href="mailto:regan@rideboxapp.com"
+                    class="modal-email-link">regan@rideboxapp.com</a></p>
         </div>
     </div>
 
@@ -1229,8 +1871,10 @@
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('jonathanModal')" aria-label="Close dialog">×</button>
             <h2 id="jonathanModalTitle">Jonathan Scott</h2>
-            <p>Jonathan serves as our Operations Supervisor, bridging the gap between high-level company strategy and the demanding day-to-day logistical realities of running a national mobility network.</p>
-            <p>Reach out directly: <a href="mailto:jonathan@rideboxapp.com" class="modal-email-link">jonathan@rideboxapp.com</a></p>
+            <p>Jonathan serves as our Operations Supervisor, bridging the gap between high-level company strategy and
+                the demanding day-to-day logistical realities of running a national mobility network.</p>
+            <p>Reach out directly: <a title="Email Jonathan" href="mailto:jonathan@rideboxapp.com"
+                    class="modal-email-link">jonathan@rideboxapp.com</a></p>
         </div>
     </div>
 
@@ -1238,87 +1882,130 @@
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('kyleModal')" aria-label="Close dialog">×</button>
             <h2 id="kyleModalTitle">Kyle Foster</h2>
-            <p>As Head of Marketing, Kyle is the driving force behind the RideBox brand identity. He manages all public communications, partnership outreach, and user acquisition strategies.</p>
-            <p>Reach out directly: <a href="mailto:kyle@rideboxapp.com" class="modal-email-link">kyle@rideboxapp.com</a></p>
+            <p>As Head of Marketing, Kyle is the driving force behind the RideBox brand identity. He manages all public
+                communications, partnership outreach, and user acquisition strategies.</p>
+            <p>Reach out directly: <a title="Email Kyle" href="mailto:kyle@rideboxapp.com"
+                    class="modal-email-link">kyle@rideboxapp.com</a>
+            </p>
         </div>
     </div>
 
     <div id="tebogoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tebogoModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('tebogoModal')" aria-label="Close dialog">×</button>
-            <h2 id="tebogoModalTitle">Tebogo-P</h2>
-            <p>Tebogo leads our digital front-end development. He is entirely responsible for the architectural design and flawless implementation of the RideBox digital interface, ensuring our user experience is fast, accessible, and intuitive.</p>
-            <p>Reach out directly: <a href="mailto:tebogo@rideboxapp.com" class="modal-email-link">tebogo@rideboxapp.com</a></p>
+            <h2 id="tebogoModalTitle">Tebogo Pii</h2>
+            <p>Tebogo leads our digital front-end development. He is entirely responsible for the architectural design
+                and flawless implementation of the RideBox digital interface, ensuring our user experience is fast,
+                accessible, and intuitive.</p>
+            <p>Reach out directly: <a title="Email Tebogo" href="mailto:tebogo@rideboxapp.com"
+                    class="modal-email-link">tebogo@rideboxapp.com</a></p>
         </div>
     </div>
- 
+
     <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('privacyModal')" aria-label="Close dialog">×</button>
             <h2 id="privacyModalTitle">Privacy Policy</h2>
-            <p>RideBox (Pty) Ltd is deeply committed to protecting your personal information in strict accordance with the Protection of Personal Information Act 4 of 2013 (POPIA). When you interact with us, we collect basic details such as your name, email address, and any information you voluntarily submit through our contact forms. If you actively use our ride platform, we also collect the necessary trip data required to securely deliver the service.</p>
-            <p>We utilize this information exclusively to respond to your enquiries, operate the RideBox platform efficiently, improve our ongoing services, and comply with all South African legal obligations. We guarantee that your data will never be sold or distributed to third parties. General contact form submissions are safely retained for 12 months, while necessary trip data is kept precisely as required by local law.</p>
-            <p>Under POPIA regulations, you retain the full right to access, correct, or request the immediate deletion of your personal information at any time. While we do use essential cookies to ensure the website operates correctly, we strictly avoid the use of third-party advertising cookies. If you have any questions or wish to exercise your rights, please reach out to our dedicated Information Officer at <a href="mailto:privacy@rideboxapp.com" class="modal-email-link">privacy@rideboxapp.com</a>.</p>
+            <p>RideBox (Pty) Ltd is deeply committed to protecting your personal information in strict accordance with
+                the Protection of Personal Information Act 4 of 2013 (POPIA). When you interact with us, we collect
+                basic details such as your name, email address, and any information you voluntarily submit through our
+                contact forms. If you actively use our ride platform, we also collect the necessary trip data required
+                to securely deliver the service.</p>
+            <p>We utilize this information exclusively to respond to your enquiries, operate the RideBox platform
+                efficiently, improve our ongoing services, and comply with all South African legal obligations. We
+                guarantee that your data will never be sold or distributed to third parties. General contact form
+                submissions are safely retained for 12 months, while necessary trip data is kept precisely as required
+                by local law.</p>
+            <p>Under POPIA regulations, you retain the full right to access, correct, or request the immediate deletion
+                of your personal information at any time. While we do use essential cookies to ensure the website
+                operates correctly, we strictly avoid the use of third-party advertising cookies. If you have any
+                questions or wish to exercise your rights, please reach out to our dedicated Information Officer at <a
+                    title="Email Privacy" href="mailto:privacy@rideboxapp.com"
+                    class="modal-email-link">privacy@rideboxapp.com</a>.</p>
         </div>
     </div>
- 
+
     <div id="termsModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('termsModal')" aria-label="Close dialog">×</button>
             <h2 id="termsModalTitle">Terms of Service</h2>
-            <p>By accessing the RideBox website or utilizing our various services, you officially agree to be bound by these terms. If you do not agree with any part of these conditions, please refrain from using the site. This platform is provided strictly for informational and booking purposes, and all written and visual content remains the exclusive property of RideBox (Pty) Ltd, meaning it may not be reproduced without our explicit written permission.</p>
-            <p>While we strive for operational excellence, RideBox makes no absolute warranty that the platform will be entirely uninterrupted or error-free at all times. We reserve the right to modify, update, or discontinue any specific service whenever necessary to ensure the safety and viability of the network. Accordingly, RideBox is not legally liable for any indirect, incidental, or consequential damages arising directly from the use of the website or platform.</p>
-            <p>These terms of service are fully governed by and construed in accordance with the laws of the Republic of South Africa. Any disputes that arise will be subject to the exclusive jurisdiction of South African courts. If you have any questions regarding these legal terms, please direct your inquiries to <a href="mailto:legal@rideboxapp.com" class="modal-email-link">legal@rideboxapp.com</a>.</p>
+            <p>By accessing the RideBox website or utilizing our various services, you officially agree to be bound by
+                these terms. If you do not agree with any part of these conditions, please refrain from using the site.
+                This platform is provided strictly for informational and booking purposes, and all written and visual
+                content remains the exclusive property of RideBox (Pty) Ltd, meaning it may not be reproduced without
+                our explicit written permission.</p>
+            <p>While we strive for operational excellence, RideBox makes no absolute warranty that the platform will be
+                entirely uninterrupted or error-free at all times. We reserve the right to modify, update, or
+                discontinue any specific service whenever necessary to ensure the safety and viability of the network.
+                Accordingly, RideBox is not legally liable for any indirect, incidental, or consequential damages
+                arising directly from the use of the website or platform.</p>
+            <p>These terms of service are fully governed by and construed in accordance with the laws of the Republic of
+                South Africa. Any disputes that arise will be subject to the exclusive jurisdiction of South African
+                courts. If you have any questions regarding these legal terms, please direct your inquiries to <a
+                    title="Email Legal" href="mailto:legal@rideboxapp.com"
+                    class="modal-email-link">legal@rideboxapp.com</a>.</p>
         </div>
     </div>
- 
+
     <div id="popiaModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="popiaModalTitle">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('popiaModal')" aria-label="Close dialog">×</button>
             <h2 id="popiaModalTitle">POPIA Notice</h2>
-            <p>RideBox (Pty) Ltd, located in Cape Town, South Africa, acts as the primary responsible party and securely processes your personal information in full compliance with the Protection of Personal Information Act 4 of 2013 (POPIA). We process this data specifically to seamlessly operate our e-hailing services, accurately respond to your submitted enquiries, and successfully fulfil our stringent legal obligations.</p>
-            <p>This data processing is legally based on your explicit consent when utilizing our contact forms, the contractual necessity required for our ride services, and our legitimate business interests in maintaining robust platform security. You hold specific, protected rights under POPIA regarding this information.</p>
-            <p>These rights include the right to be formally notified when your personal information is collected, the right to request access to the exact information we hold about you, and the right to request its immediate correction or deletion. You are also entitled to formally object to the processing of your personal information or to lodge an official complaint directly with the South African Information Regulator. To exercise any of these rights, please contact our privacy team at <a href="mailto:privacy@rideboxapp.com" class="modal-email-link">privacy@rideboxapp.com</a>.</p>
+            <p>RideBox (Pty) Ltd, located in Cape Town, South Africa, acts as the primary responsible party and securely
+                processes your personal information in full compliance with the Protection of Personal Information Act 4
+                of 2013 (POPIA). We process this data specifically to seamlessly operate our e-hailing services,
+                accurately respond to your submitted enquiries, and successfully fulfil our stringent legal obligations.
+            </p>
+            <p>This data processing is legally based on your explicit consent when utilizing our contact forms, the
+                contractual necessity required for our ride services, and our legitimate business interests in
+                maintaining robust platform security. You hold specific, protected rights under POPIA regarding this
+                information.</p>
+            <p>These rights include the right to be formally notified when your personal information is collected, the
+                right to request access to the exact information we hold about you, and the right to request its
+                immediate correction or deletion. You are also entitled to formally object to the processing of your
+                personal information or to lodge an official complaint directly with the South African Information
+                Regulator. To exercise any of these rights, please contact our privacy team at <a title="Email Privacy"
+                    href="mailto:privacy@rideboxapp.com" class="modal-email-link">privacy@rideboxapp.com</a>.</p>
         </div>
     </div>
- 
+
     <script>
         // ── Cookie consent ──
-        (function() {
+        (function () {
             try {
                 if (localStorage.getItem('rb_cookie_consent')) {
                     document.getElementById('cookieBanner').style.display = 'none';
                 }
-            } catch(e) {}
+            } catch (e) { }
         })();
- 
+
         function acceptCookies() {
-            try { localStorage.setItem('rb_cookie_consent', 'accepted'); } catch(e) {}
+            try { localStorage.setItem('rb_cookie_consent', 'accepted'); } catch (e) { }
             document.getElementById('cookieBanner').style.display = 'none';
         }
         function dismissCookies() {
-            try { localStorage.setItem('rb_cookie_consent', 'declined'); } catch(e) {}
+            try { localStorage.setItem('rb_cookie_consent', 'declined'); } catch (e) { }
             document.getElementById('cookieBanner').style.display = 'none';
         }
- 
+
         // ── Hamburger ──
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             const expanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !expanded);
             navLinks.classList.toggle('active');
         });
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
+        navLinks.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
                 navLinks.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
             });
         });
- 
+
         // ── Modal helpers ──
         var lastFocusedElement = null;
- 
+
         function openModal(id) {
             lastFocusedElement = document.activeElement;
             var modal = document.getElementById(id);
@@ -1328,7 +2015,7 @@
             if (closeBtn) closeBtn.focus();
             modal.addEventListener('keydown', trapFocus);
         }
- 
+
         function closeModal(id) {
             var modal = document.getElementById(id);
             modal.style.display = "none";
@@ -1336,7 +2023,7 @@
             modal.removeEventListener('keydown', trapFocus);
             if (lastFocusedElement) lastFocusedElement.focus();
         }
- 
+
         function trapFocus(e) {
             if (e.key === 'Escape') { closeModal(e.currentTarget.id); return; }
             if (e.key !== 'Tab') return;
@@ -1350,40 +2037,40 @@
                 if (document.activeElement === last) { first.focus(); e.preventDefault(); }
             }
         }
- 
-        window.onclick = function(e) { if (e.target.classList.contains('modal')) { closeModal(e.target.id); } };
- 
+
+        window.onclick = function (e) { if (e.target.classList.contains('modal')) { closeModal(e.target.id); } };
+
         // ── Legal modal opener ──
         function openLegal(type) {
             var map = { privacy: 'privacyModal', terms: 'termsModal', popia: 'popiaModal' };
             if (map[type]) openModal(map[type]);
         }
- 
+
         // ── FAQ accordion ──
         function toggleFaq(btn) {
             var answer = btn.nextElementSibling;
             var expanded = btn.getAttribute('aria-expanded') === 'true';
- 
+
             // Close all others
-            document.querySelectorAll('.faq-question').forEach(function(q) {
+            document.querySelectorAll('.faq-question').forEach(function (q) {
                 q.setAttribute('aria-expanded', 'false');
                 q.nextElementSibling.classList.remove('open');
             });
- 
+
             if (!expanded) {
                 btn.setAttribute('aria-expanded', 'true');
                 answer.classList.add('open');
             }
         }
- 
+
         // ── Contact form ──
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             var form = e.target;
             var status = document.getElementById('statusMsg');
             var submitBtn = form.querySelector('.btn');
-            
+
             submitBtn.innerText = "SENDING...";
             submitBtn.disabled = true;
             status.style.display = "none";
@@ -1416,4 +2103,5 @@
         });
     </script>
 </body>
+
 </html>
