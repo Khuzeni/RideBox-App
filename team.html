@@ -1,296 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RIDEBOX Team — Meet the innovators, engineers, and strategists building the future of South Africa's mobility.">
+  <meta name="description"
+    content="RIDEBOX Team — Meet the innovators, engineers, and strategists building the future of South Africa's mobility.">
   <link rel="icon" type="image/png" href="ridebox-logo.png">
   <link rel="stylesheet" href="style.css">
   <title>Team | RIDEBOX</title>
   <style>
     /* Team grid */
-    .team-grid{
-      display:grid;grid-template-columns:repeat(5,1fr);
-      gap:32px;
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
     }
-    @media(max-width:1200px){
-      .team-grid{grid-template-columns:repeat(4,1fr)}
+
+    @media(max-width:1200px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr)
+      }
     }
-    .team-card{
-      border:1px solid var(--border-strong);
-      padding:0;
-      overflow:hidden;
-      transition:all .35s;
+
+    .team-card {
+      border: 1px solid var(--border-strong);
+      padding: 0;
+      overflow: hidden;
+      transition: all .35s;
     }
-    .team-card:hover{background:var(--charcoal)}
-    .team-image{
-      width:100%;aspect-ratio:1;
-      background:var(--dim);
-      display:flex;align-items:center;justify-content:center;
-      font-family:var(--ff-mono);
-      font-size:.75rem;
-      color:var(--muted);
-      text-transform:uppercase;
+
+    .team-card:hover {
+      background: var(--charcoal)
     }
-    .team-info{padding:28px 24px}
-    .team-name{
-      font-family:var(--ff-sans);
-      font-size:.95rem;font-weight:700;
-      text-transform:uppercase;letter-spacing:1px;
-      margin-bottom:6px;
+
+    .team-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-mono);
+      font-size: .75rem;
+      color: var(--muted);
+      text-transform: uppercase;
     }
-    .team-role{
-      font-family:var(--ff-mono);
-      font-size:.68rem;
-      color:var(--muted);letter-spacing:1.5px;
-      text-transform:uppercase;margin-bottom:14px;
+
+    .team-info {
+      padding: 28px 24px
     }
-    .team-bio{
-      font-family:var(--ff-mono);
-      font-size:.75rem;
-      color:var(--ghost);line-height:1.75;
+
+    .team-name {
+      font-family: var(--ff-sans);
+      font-size: .95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .team-role {
+      font-family: var(--ff-mono);
+      font-size: .68rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .team-bio {
+      font-family: var(--ff-mono);
+      font-size: .75rem;
+      color: var(--ghost);
+      line-height: 1.75;
     }
 
     /* Team section header */
-    .team-intro{
-      display:grid;grid-template-columns:1fr 2fr;
-      gap:100px;align-items:start;
-      margin-bottom:80px;
+    .team-intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 100px;
+      align-items: start;
+      margin-bottom: 80px;
     }
-    .team-intro-title{
-      font-family:var(--ff-serif);
-      font-size:clamp(1.8rem,3.5vw,2.8rem);
-      font-weight:300;
-      letter-spacing:-.5px;
-      line-height:1.15;
-      color:var(--soft);
-    }
-    .team-intro-body{
-      font-family:var(--ff-mono);
-      font-size:.83rem;
-      color:var(--ghost);line-height:1.95;
-    }
-    .team-intro-body p{margin-bottom:22px}
-    .team-intro-body p:last-child{margin-bottom:0}
 
-    @media(max-width:1024px){
-      .team-grid{grid-template-columns:repeat(3,1fr);gap:24px}
-      .team-intro{grid-template-columns:1fr;gap:40px}
+    .team-intro-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      letter-spacing: -.5px;
+      line-height: 1.15;
+      color: var(--soft);
     }
-    @media(max-width:768px){
-      .team-grid{grid-template-columns:repeat(2,1fr) !important;gap:20px}
-      .team-card{padding:0}
-      .team-name{font-size:.85rem}
-      .team-role{font-size:.63rem}
-      .team-bio{font-size:.7rem;line-height:1.6}
-      .team-intro-title{font-size:clamp(1.4rem,3vw,2rem)}
-      .team-intro-body{font-size:.75rem}
+
+    .team-intro-body {
+      font-family: var(--ff-mono);
+      font-size: .83rem;
+      color: var(--ghost);
+      line-height: 1.95;
     }
-    @media(max-width:600px){
-      .team-grid{grid-template-columns:1fr !important;gap:16px}
-      .team-name{font-size:.82rem}
-      .team-role{font-size:.62rem}
-      .team-bio{font-size:.7rem;line-height:1.65}
-      .team-intro-title{font-size:clamp(1.3rem,3vw,1.8rem)}
-      .team-intro-body{font-size:.78rem}
+
+    .team-intro-body p {
+      margin-bottom: 22px
     }
-    @media(max-width:480px){
-      .team-grid{grid-template-columns:1fr !important;gap:14px}
-      .team-card{border:1px solid var(--border-mid);padding:0}
-      .team-name{font-size:.8rem;letter-spacing:.5px}
-      .team-role{font-size:.58rem;letter-spacing:1px}
-      .team-bio{font-size:.68rem;line-height:1.6}
-      .team-intro-title{font-size:clamp(1.1rem,2.5vw,1.5rem)}
-      .team-intro-body{font-size:.75rem;line-height:1.75}
+
+    .team-intro-body p:last-child {
+      margin-bottom: 0
+    }
+
+    @media(max-width:1024px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px
+      }
+
+      .team-intro {
+        grid-template-columns: 1fr;
+        gap: 40px
+      }
+    }
+
+    @media(max-width:768px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px
+      }
+
+      .team-card {
+        padding: 0
+      }
+
+      .team-name {
+        font-size: .85rem
+      }
+
+      .team-role {
+        font-size: .63rem
+      }
+
+      .team-bio {
+        font-size: .7rem;
+        line-height: 1.6
+      }
+
+      .team-intro-title {
+        font-size: clamp(1.4rem, 3vw, 2rem)
+      }
+
+      .team-intro-body {
+        font-size: .75rem
+      }
+    }
+
+    @media(max-width:600px) {
+      .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px
+      }
+
+      .team-name {
+        font-size: .82rem
+      }
+
+      .team-role {
+        font-size: .62rem
+      }
+
+      .team-bio {
+        font-size: .7rem;
+        line-height: 1.65
+      }
+
+      .team-intro-title {
+        font-size: clamp(1.3rem, 3vw, 1.8rem)
+      }
+
+      .team-intro-body {
+        font-size: .78rem
+      }
+    }
+
+    @media(max-width:480px) {
+      .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px
+      }
+
+      .team-card {
+        border: 1px solid var(--border-mid);
+        padding: 0
+      }
+
+      .team-name {
+        font-size: .8rem;
+        letter-spacing: .5px
+      }
+
+      .team-role {
+        font-size: .58rem;
+        letter-spacing: 1px
+      }
+
+      .team-bio {
+        font-size: .68rem;
+        line-height: 1.6
+      }
+
+      .team-intro-title {
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem)
+      }
+
+      .team-intro-body {
+        font-size: .75rem;
+        line-height: 1.75
+      }
     }
   </style>
 </head>
+
 <body>
-<a href="#main" class="skip-link">Skip to content</a>
-<div id="page-curtain"></div>
- 
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span class="nav-logo-text">RIDEBOX</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
-    <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
-    <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="page-curtain"></div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo"><img src="ridebox-logo.png" alt="Ridebox" width="32" height="32"><span
+        class="nav-logo-text">RIDEBOX</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <ul class="nav-mobile">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hardware.html">Hardware</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-pill"><span>Contact Us</span></a>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-<ul class="nav-mobile">
-  <li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li>
-  <li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
-  <li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
- 
-<main id="main">
- 
-<header class="page-hero team-decoration">
-  <span class="page-hero-eyebrow fade-in">Meet The Crew</span>
-  <h1 class="page-hero-title">
-    <span class="reveal-wrap"><span class="reveal-line">The RideBox</span></span>
-    <span class="reveal-wrap"><span class="reveal-line" style="font-style:italic;color:var(--ghost)">Team</span></span>
-  </h1>
-  <p class="page-hero-body fade-up delay-2">
-    A multidisciplinary group of engineers, designers, strategists, and operators committed to building the most reliable, safe, and equitable e-hailing platform in South Africa.
-  </p>
-  <div class="page-hero-decoration" aria-hidden="true"><div class="nodes-pattern" id="nodesContainer"></div></div>
-</header>
- 
-<!-- ── MARQUEE ── -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-inner">
-    <span class="marquee-item">Engineers & Architects</span><span class="marquee-item">Product Designers</span>
-    <span class="marquee-item">Operations Specialists</span><span class="marquee-item">Driver Advocates</span>
-    <span class="marquee-item">Safety Officers</span><span class="marquee-item">Data Analysts</span>
-    <span class="marquee-item">Engineers & Architects</span><span class="marquee-item">Product Designers</span>
-    <span class="marquee-item">Operations Specialists</span><span class="marquee-item">Driver Advocates</span>
-    <span class="marquee-item">Safety Officers</span><span class="marquee-item">Data Analysts</span>
+
+  <main id="main">
+
+    <header class="page-hero team-decoration">
+      <span class="page-hero-eyebrow fade-in">Meet The Crew</span>
+      <h1 class="page-hero-title">
+        <span class="reveal-wrap"><span class="reveal-line">The RideBox</span></span>
+        <span class="reveal-wrap"><span class="reveal-line"
+            style="font-style:italic;color:var(--ghost)">Team</span></span>
+      </h1>
+      <p class="page-hero-body fade-up delay-2">
+        A multidisciplinary group of engineers, designers, strategists, and operators committed to building the most
+        reliable, safe, and equitable e-hailing platform in South Africa.
+      </p>
+      <div class="page-hero-decoration" aria-hidden="true">
+        <div class="nodes-pattern" id="nodesContainer"></div>
+      </div>
+    </header>
+
+    <!-- ── MARQUEE ── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        <span class="marquee-item">Engineers & Architects</span><span class="marquee-item">Product Designers</span>
+        <span class="marquee-item">Operations Specialists</span><span class="marquee-item">Driver Advocates</span>
+        <span class="marquee-item">Safety Officers</span><span class="marquee-item">Data Analysts</span>
+        <span class="marquee-item">Engineers & Architects</span><span class="marquee-item">Product Designers</span>
+        <span class="marquee-item">Operations Specialists</span><span class="marquee-item">Driver Advocates</span>
+        <span class="marquee-item">Safety Officers</span><span class="marquee-item">Data Analysts</span>
+      </div>
+    </div>
+
+    <!-- ── TEAM INTRO ── -->
+    <section class="section">
+      <div class="team-intro fade-up">
+        <h2 class="team-intro-title">Built by South Africans,<em> for South Africans</em></h2>
+        <div class="team-intro-body">
+          <p>RideBox was founded by two CPUT graduates who saw the same problem from different parts of the country. One
+            from Soweto, one from Port Elizabeth, both frustrated by a mobility system that failed when it mattered
+            most.</p>
+          <p>Rather than accept the status quo, Dumisane Zikalala and Alulutho Mbangela chose to build. Today, they lead
+            a growing team committed to solving real problems with real infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM MEMBERS ── -->
+    <section class="section">
+      <div class="section-meta fade-up">
+        <span class="section-tag">The Roster</span>
+        <h2 class="section-title">Meet The Team</h2>
+      </div>
+      <div style="margin-bottom:60px">
+        <h3
+          style="font-family:var(--ff-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:32px;font-weight:500">
+          Co-Founders</h3>
+        <div class="team-grid fade-up">
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Dumisane Zikalala</div>
+              <div class="team-role">Co-Founder & Tech Lead</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Born in Soweto</strong><br>
+                Graduate of Cape Peninsula University of Technology (CPUT)<br>
+                Focused on leveraging technology for social good and sustainable infrastructure
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:dumisane.zikalala@rideboxapp.com"
+                  style="color:var(--ghost)">dumisane.zikalala@rideboxapp.com</a></div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Alulutho Mbangela</div>
+              <div class="team-role">Co-Founder & Operations</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">From Port Elizabeth</strong><br>
+                Also a CPUT graduate (studied alongside Dumisane)<br>
+                Handles day-to-day operational logistics across the country
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:alulutho@rideboxapp.com" style="color:var(--ghost)">alulutho@rideboxapp.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3
+          style="font-family:var(--ff-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:32px;font-weight:500">
+          Core Team</h3>
+        <div class="team-grid fade-up">
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Regan</div>
+              <div class="team-role">Project Manager</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Deployment & Partnerships</strong><br>
+                Manages deployment timelines and technical vendor partnerships. Oversees kiosk installations.
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:regan@rideboxapp.com" style="color:var(--ghost)">regan@rideboxapp.com</a></div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Jonathan</div>
+              <div class="team-role">Supervisor</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Strategy & Logistics</strong><br>
+                Bridges company strategy with day-to-day logistics of running the national mobility network.
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:jonathan@rideboxapp.com" style="color:var(--ghost)">jonathan@rideboxapp.com</a></div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Kyle</div>
+              <div class="team-role">Head of Marketing</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Brand & Growth</strong><br>
+                Manages brand identity, public communications, partnership outreach, and user acquisition.
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:kyle@rideboxapp.com" style="color:var(--ghost)">kyle@rideboxapp.com</a></div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Tebogo Pii</div>
+              <div class="team-role">Web Developer</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Website Integration</strong><br>
+                Responsible for the architecture and implementation of the RideBox digital interface. Focuses on speed,
+                accessibility, and UX.
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:tebogo@rideboxapp.com" style="color:var(--ghost)">tebogo@rideboxapp.com</a></div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-info" style="padding:32px 24px">
+              <div class="team-name">Siphokazi Gwagwa</div>
+              <div class="team-role">Operations & Logistics Manager</div>
+              <div class="team-bio" style="margin-bottom:16px">
+                <strong style="color:var(--soft)">Pilot Coordination</strong><br>
+                Oversees deployment logistics, site coordination, and operational rollout across all pilot locations.
+                Manages daily operations and vendor relationships.
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a
+                  href="mailto:siphokazi@rideboxapp.com" style="color:var(--ghost)">siphokazi@rideboxapp.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section" style="padding:80px 8%">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap">
+        <div class="fade-up">
+          <span class="section-tag">We're Hiring</span>
+          <h2 class="section-title">Join Our Mission.<br>Let's advance mobility together.</h2>
+        </div>
+        <a href="contact.html" class="btn btn-fill magnetic fade-up delay-2">
+          <span>View Careers</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div>
+        <p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p>
+        <div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener"
+            aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path
+                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z" />
+            </svg></a><a href="https://www.linkedin.com/company/ridebox-technologies/posts/?feedView=all"
+            class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15"
+              height="15" fill="currentColor">
+              <path
+                d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z" />
+            </svg></a><a href="https://www.instagram.com/ridebox_technologies" class="social-btn" target="_blank"
+            rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path
+                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.79.263-1.473.606-2.115 1.248-.64.64-.985 1.324-1.248 2.106-.266.788-.467 1.657-.527 2.935C.038 8.333.025 8.74.025 12c0 3.26.015 3.667.072 4.947.06 1.277.261 2.148.527 2.935.263.79.606 1.473 1.248 2.115.64.64 1.325.985 2.106 1.248.788.266 1.657.467 2.935.527 1.28.058 1.687.072 4.947.072s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.935-.527.79-.263 1.473-.606 2.115-1.248.64-.64.985-1.325 1.248-2.106.266-.788.467-1.657.527-2.935.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.527-2.935-.263-.79-.606-1.473-1.248-2.115-.64-.64-1.325-.985-2.106-1.248-.788-.266-1.657-.467-2.935-.527-1.28-.058-1.687-.072-4.947-.072zm0 2.16c3.203 0 3.585.009 4.85.064 1.17.054 1.805.244 2.227.404.56.217.96.477 1.382.896.419.42.679.822.896 1.381.16.422.35 1.057.404 2.227.055 1.266.064 1.645.064 4.85s-.009 3.585-.064 4.85c-.054 1.17-.244 1.805-.404 2.227-.217.56-.477.96-.896 1.382-.42.419-.822.679-1.381.896-.422.16-1.057.35-2.227.404-1.266.055-1.645.064-4.85.064s-3.585-.009-4.85-.064c-1.17-.054-1.805-.244-2.227-.404-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.822-.896-1.381-.16-.422-.35-1.057-.404-2.227-.055-1.266-.064-1.645-.064-4.85s.009-3.585.064-4.85c.054-1.17.244-1.805.404-2.227.217-.56.477-.96.896-1.382.42-.419.822-.679 1.381-.896.422-.16 1.057-.35 2.227-.404 1.266-.055 1.645-.064 4.85-.064z" />
+              <circle cx="12" cy="12" r="3.846" />
+            </svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg
+              viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z" />
+            </svg></a></div>
+      </div>
+      <div>
+        <p class="footer-col-label">Navigation</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hardware.html">Hardware</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Contact</p>
+        <ul class="footer-col-links">
+          <li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li>
+          <li><a href="contact.html">Send a Message</a></li>
+        </ul>
+        <p class="footer-col-label" style="margin-top:24px">Legal</p>
+        <ul class="footer-col-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="popia.html">POPIA Notice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p>
+      <div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a
+          href="popia.html">POPIA</a></div>
+    </div>
+  </footer>
+
+  <div id="cookieBanner" role="region">
+    <p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#"
+        onclick="openLegal('privacy');return false">Privacy Policy</a></p>
+    <div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button
+        class="c-btn accept" onclick="acceptCookies()">Accept</button></div>
   </div>
-</div>
- 
-<!-- ── TEAM INTRO ── -->
-<section class="section">
-  <div class="team-intro fade-up">
-    <h2 class="team-intro-title">Built by South Africans,<em> for South Africans</em></h2>
-    <div class="team-intro-body">
-      <p>RideBox was founded by two CPUT graduates who saw the same problem from different parts of the country. One from Soweto, one from Port Elizabeth, both frustrated by a mobility system that failed when it mattered most.</p>
-      <p>Rather than accept the status quo, Dumisane Zikalala and Alulutho Mbangela chose to build. Today, they lead a growing team committed to solving real problems with real infrastructure.</p>
+  <div id="privacyModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button>
+      <h2>Privacy Policy</h2>
+      <p>RideBox (Pty) Ltd protects your information under POPIA. Contact: <a href="mailto:privacy@rideboxapp.com"
+          class="modal-link">privacy@rideboxapp.com</a></p>
     </div>
   </div>
-</section>
- 
-<!-- ── TEAM MEMBERS ── -->
-<section class="section">
-  <div class="section-meta fade-up">
-    <span class="section-tag">The Roster</span>
-    <h2 class="section-title">Meet The Team</h2>
+  <div id="termsModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button>
+      <h2>Terms of Service</h2>
+      <p>Governed by South African law. Questions: <a href="mailto:legal@rideboxapp.com"
+          class="modal-link">legal@rideboxapp.com</a></p>
+    </div>
   </div>
-  <div style="margin-bottom:60px">
-    <h3 style="font-family:var(--ff-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:32px;font-weight:500">Co-Founders</h3>
-    <div class="team-grid fade-up">
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Dumisane Zikalala</div>
-          <div class="team-role">Co-Founder & Tech Lead</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Born in Soweto</strong><br>
-            Graduate of Cape Peninsula University of Technology (CPUT)<br>
-            Focused on leveraging technology for social good and sustainable infrastructure
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:dumisane.zikalala@rideboxapp.com" style="color:var(--ghost)">dumisane.zikalala@rideboxapp.com</a></div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Alulutho Mbangela</div>
-          <div class="team-role">Co-Founder & Operations</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">From Port Elizabeth</strong><br>
-            Also a CPUT graduate (studied alongside Dumisane)<br>
-            Handles day-to-day operational logistics across the country
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:alulutho@rideboxapp.com" style="color:var(--ghost)">alulutho@rideboxapp.com</a></div>
-        </div>
-      </div>
+  <div id="popiaModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button>
+      <h2>POPIA Notice</h2>
+      <p>Full compliance with POPIA Act 4 of 2013. Contact: <a href="mailto:privacy@rideboxapp.com"
+          class="modal-link">privacy@rideboxapp.com</a></p>
     </div>
   </div>
 
-  <div>
-    <h3 style="font-family:var(--ff-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:32px;font-weight:500">Core Team</h3>
-    <div class="team-grid fade-up">
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Regan</div>
-          <div class="team-role">Project Manager</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Deployment & Partnerships</strong><br>
-            Manages deployment timelines and technical vendor partnerships. Oversees kiosk installations.
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:regan@rideboxapp.com" style="color:var(--ghost)">regan@rideboxapp.com</a></div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Jonathan</div>
-          <div class="team-role">Supervisor</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Strategy & Logistics</strong><br>
-            Bridges company strategy with day-to-day logistics of running the national mobility network.
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:jonathan@rideboxapp.com" style="color:var(--ghost)">jonathan@rideboxapp.com</a></div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Kyle</div>
-          <div class="team-role">Head of Marketing</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Brand & Growth</strong><br>
-            Manages brand identity, public communications, partnership outreach, and user acquisition.
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:kyle@rideboxapp.com" style="color:var(--ghost)">kyle@rideboxapp.com</a></div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Tebogo Pii</div>
-          <div class="team-role">Web Developer</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Website Integration</strong><br>
-            Responsible for the architecture and implementation of the RideBox digital interface. Focuses on speed, accessibility, and UX.
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:tebogo@rideboxapp.com" style="color:var(--ghost)">tebogo@rideboxapp.com</a></div>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-info" style="padding:32px 24px">
-          <div class="team-name">Siphokazi Gwagwa</div>
-          <div class="team-role">Operations & Logistics Manager</div>
-          <div class="team-bio" style="margin-bottom:16px">
-            <strong style="color:var(--soft)">Pilot Coordination</strong><br>
-            Oversees deployment logistics, site coordination, and operational rollout across all pilot locations. Manages daily operations and vendor relationships.
-          </div>
-          <div style="font-family:var(--ff-mono);font-size:.7rem;color:var(--muted)"><a href="mailto:siphokazi@rideboxapp.com" style="color:var(--ghost)">siphokazi@rideboxapp.com</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- ── CTA ── -->
-<section class="section" style="padding:80px 8%">
-  <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap">
-    <div class="fade-up">
-      <span class="section-tag">We're Hiring</span>
-      <h2 class="section-title">Join Our Mission.<br>Let's advance mobility together.</h2>
-    </div>
-    <a href="contact.html" class="btn btn-fill magnetic fade-up delay-2">
-      <span>View Careers</span>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
- 
-</main>
- 
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div><div class="footer-brand-name"><img src="ridebox-logo.png" alt="Ridebox" width="28" height="28">RIDEBOX</div><p class="footer-tagline">Advancing South Africa's Mobility<br>Solar-powered · Secure · Accessible</p><div class="social-row"><a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.174 2.097 15.943 2 14.643 2 11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="https://www.linkedin.com/company/ridebox-technologies/posts/?feedView=all" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zm-11 19H5V8h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765C14.396 7.179 20 6.988 20 12.248V19z"/></svg></a><a href="https://www.instagram.com/ridebox_technologies" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.79.263-1.473.606-2.115 1.248-.64.64-.985 1.324-1.248 2.106-.266.788-.467 1.657-.527 2.935C.038 8.333.025 8.74.025 12c0 3.26.015 3.667.072 4.947.06 1.277.261 2.148.527 2.935.263.79.606 1.473 1.248 2.115.64.64 1.325.985 2.106 1.248.788.266 1.657.467 2.935.527 1.28.058 1.687.072 4.947.072s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.935-.527.79-.263 1.473-.606 2.115-1.248.64-.64.985-1.325 1.248-2.106.266-.788.467-1.657.527-2.935.058-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.527-2.935-.263-.79-.606-1.473-1.248-2.115-.64-.64-1.325-.985-2.106-1.248-.788-.266-1.657-.467-2.935-.527-1.28-.058-1.687-.072-4.947-.072zm0 2.16c3.203 0 3.585.009 4.85.064 1.17.054 1.805.244 2.227.404.56.217.96.477 1.382.896.419.42.679.822.896 1.381.16.422.35 1.057.404 2.227.055 1.266.064 1.645.064 4.85s-.009 3.585-.064 4.85c-.054 1.17-.244 1.805-.404 2.227-.217.56-.477.96-.896 1.382-.42.419-.822.679-1.381.896-.422.16-1.057.35-2.227.404-1.266.055-1.645.064-4.85.064s-3.585-.009-4.85-.064c-1.17-.054-1.805-.244-2.227-.404-.56-.217-.96-.477-1.382-.896-.419-.42-.679-.822-.896-1.381-.16-.422-.35-1.057-.404-2.227-.055-1.266-.064-1.645-.064-4.85s.009-3.585.064-4.85c.054-1.17.244-1.805.404-2.227.217-.56.477-.96.896-1.382.42-.419.822-.679 1.381-.896.422-.16 1.057-.35 2.227-.404 1.266-.055 1.645-.064 4.85-.064z"/><circle cx="12" cy="12" r="3.846"/></svg></a><a href="https://x.com" class="social-btn" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.005 4.15H5.078z"/></svg></a></div></div>
-    <div><p class="footer-col-label">Navigation</p><ul class="footer-col-links"><li><a href="index.html">Home</a></li><li><a href="hardware.html">Hardware</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="team.html">Team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><p class="footer-col-label">Contact</p><ul class="footer-col-links"><li><a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a></li><li><a href="contact.html">Send a Message</a></li></ul><p class="footer-col-label" style="margin-top:24px">Legal</p><ul class="footer-col-links"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="popia.html">POPIA Notice</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p class="footer-copy">© 2025 RIDEBOX (PTY) LTD · Cape Town, South Africa</p><div class="footer-legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="popia.html">POPIA</a></div></div>
-</footer>
- 
-<div id="cookieBanner" role="region"><p>We use cookies in accordance with South Africa's <strong>POPIA</strong>. <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></p><div class="cookie-btns"><button class="c-btn decline" onclick="declineCookies()">Decline</button><button class="c-btn accept" onclick="acceptCookies()">Accept</button></div></div>
-<div id="privacyModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacyModal')">×</button><h2>Privacy Policy</h2><p>RideBox (Pty) Ltd protects your information under POPIA. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
-<div id="termsModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('termsModal')">×</button><h2>Terms of Service</h2><p>Governed by South African law. Questions: <a href="mailto:legal@rideboxapp.com" class="modal-link">legal@rideboxapp.com</a></p></div></div>
-<div id="popiaModal" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="modal-close" onclick="closeModal('popiaModal')">×</button><h2>POPIA Notice</h2><p>Full compliance with POPIA Act 4 of 2013. Contact: <a href="mailto:privacy@rideboxapp.com" class="modal-link">privacy@rideboxapp.com</a></p></div></div>
- 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
