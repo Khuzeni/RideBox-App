@@ -16,12 +16,14 @@ const Hero = () => (
       <div className="flex flex-col sm:flex-row gap-6">
         <Link
           to="/kiosk"
+          title="Explore the Kiosk"
           className="bg-white text-black text-center font-bold text-sm tracking-widest py-4 px-8 hover:bg-white/90 transition-colors"
         >
           EXPLORE THE KIOSK
         </Link>
         <Link
           to="/contact"
+          title="Contact Us"
           className="border border-white/30 text-white text-center font-bold text-sm tracking-widest py-4 px-8 hover:bg-white/10 transition-colors"
         >
           GET IN TOUCH
@@ -63,6 +65,7 @@ const KioskPreview = () => (
           <img
             src={src}
             alt={`RideBox kiosk concept render ${i}`}
+            title={`RideBox kiosk concept render ${i}`}
             className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-black/80 to-transparent"></div>
@@ -79,6 +82,7 @@ const KioskPreview = () => (
       </p>
       <Link
         to="/kiosk"
+        title="View Hardware"
         className="text-xs font-bold tracking-[0.2em] hover:text-white/70 transition-colors flex items-center gap-2"
       >
         VIEW HARDWARE <span>&rarr;</span>
@@ -107,6 +111,7 @@ const Advertising = () => (
       </p>
       <Link
         to="/contact"
+        title="Contact Us About Advertising"
         className="text-xs font-bold tracking-[0.2em] hover:text-white/70 transition-colors flex items-center gap-2"
       >
         CONTACT US ABOUT ADVERTISING <span>&rarr;</span>
@@ -130,6 +135,7 @@ const ServicesPreview = () => (
       </div>
       <Link
         to="/services"
+        title="View All Services"
         className="text-xs font-bold tracking-[0.2em] hover:text-white/70 transition-colors flex items-center gap-2"
       >
         VIEW ALL SERVICES <span>&rarr;</span>
@@ -190,6 +196,7 @@ const Mission = () => (
       <div>
         <Link
           to="/about"
+          title="Read Our Story"
           className="text-xs font-bold tracking-[0.2em] hover:text-white/70 transition-colors flex items-center gap-2 uppercase"
         >
           READ OUR STORY <span>&rarr;</span>
@@ -207,6 +214,7 @@ const MeetTheTeam = () => (
     </div>
     <Link
       to="/team"
+      title="Meet the Team"
       className="text-xs font-bold tracking-[0.2em] hover:text-white/70 transition-colors flex items-center gap-2"
     >
       MEET THE TEAM <span>&rarr;</span>

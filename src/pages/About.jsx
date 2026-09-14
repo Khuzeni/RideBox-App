@@ -57,6 +57,7 @@ const About = () => (
         <img
           src="/Logos/RideboxLogo_1000%20X%201000.png"
           alt="RideBox logo"
+          title="RideBox Logo"
           className="w-56 h-56 lg:w-96 lg:h-96 object-contain"
         />
       </div>

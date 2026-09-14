@@ -29,6 +29,7 @@ const KioskImage = ({ src, alt }) => (
     <img
       src={src}
       alt={alt}
+      title={alt}
       className="kiosk-render absolute inset-0 w-full h-full object-contain transition-all duration-700"
     />
     <span className="absolute bottom-4 left-0 right-0 text-center text-[10px] tracking-widest text-white/25 uppercase select-none">

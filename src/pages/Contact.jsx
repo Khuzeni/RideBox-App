@@ -44,12 +44,12 @@ export default function Contact() {
             <Info label="LOCATION">Cape Town, Western Cape</Info>
             <Info label="STAGE">Pre-Launch - First Unit in Preparation</Info>
             <Info label="PARTNERSHIPS">
-              <a href="mailto:info@rideboxapp.com">
+              <a href="mailto:info@rideboxapp.com" title="Email Partnerships">
                 info@rideboxapp.com
               </a>
             </Info>
             <Info label="GENERAL">
-              <a href="mailto:info@rideboxapp.com">info@rideboxapp.com</a>
+              <a href="mailto:info@rideboxapp.com" title="Email General">info@rideboxapp.com</a>
             </Info>
           </div>
         </div>

@@ -58,6 +58,7 @@ const Portrait = ({ src, alt, contain = false }) => (
       <img
         src={src}
         alt={alt}
+        title={alt}
         className={`absolute inset-0 w-full h-full ${contain ? "object-contain object-center" : "object-cover"}`}
       />
     ) : (
@@ -101,6 +102,7 @@ export default function Team() {
                 </p>
                 <a
                   href={`mailto:${email}`}
+                  title={`Email ${name}`}
                   className="text-sm text-white/45 hover:text-white transition-colors"
                 >
                   {email}
@@ -128,6 +130,7 @@ export default function Team() {
                 </p>
                 <a
                   href={`mailto:${email}`}
+                  title={`Email ${name}`}
                   className="text-sm text-white/45 hover:text-white transition-colors"
                 >
                   {email}
