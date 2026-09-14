@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const legalContent = {
   privacy: {
@@ -92,6 +93,10 @@ export default function Legal({ type }) {
 
   return (
     <main>
+      <Helmet>
+        <title>{page.title} | RIDEBOX</title>
+        <meta name="description" content={page.intro} />
+      </Helmet>
       <section className="px-8 lg:px-16 py-16 lg:py-28 border-b border-white/10">
         <div className="eyebrow mb-6">{page.eyebrow}</div>
         <h1 className="page-title">{page.title}</h1>

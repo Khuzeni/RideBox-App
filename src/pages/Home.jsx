@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Hero = () => (
   <section className="px-8 lg:px-16 py-16 lg:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -10,7 +11,7 @@ const Hero = () => (
       <h1 className="hero-title mb-6">RIDEBOX</h1>
       <p className="text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
         Solar-assisted self-service kiosks connecting commuters to licensed
-        e-hailing services without a smartphone, data or a bank card.
+        e-hailing services without a smartphone or data bundles.
       </p>
       <div className="flex flex-col sm:flex-row gap-6">
         <Link
@@ -139,7 +140,7 @@ const ServicesPreview = () => (
         [
           "01",
           "E-Hailing Access",
-          "Book through a kiosk without a smartphone, data or a bank card.",
+          "Book through a kiosk without a smartphone or data bundles",
         ],
         [
           "02",
@@ -216,6 +217,10 @@ const MeetTheTeam = () => (
 const Home = () => {
   return (
     <main>
+      <Helmet>
+        <title>RIDEBOX | Kiosks For E-hailing</title>
+        <meta name="description" content="RideBox Technologies builds solar-assisted self-service kiosks that connect commuters to licensed e-hailing services without a smartphone, data or a bank card." />
+      </Helmet>
       <Hero />
       <KioskPreview />
       <ServicesPreview />

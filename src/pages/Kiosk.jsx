@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 /* ─── scroll-reveal hook ─── */
 function useInView(threshold = 0.1) {
@@ -181,6 +182,10 @@ const TechSpecs = () => {
 /* ─── PAGE ─── */
 const Kiosk = () => (
   <main>
+    <Helmet>
+      <title>Hardware | RIDEBOX Kiosks</title>
+      <meta name="description" content="Explore the RideBox kiosk hardware. A compact, tough, solar-powered self-service kiosk connecting commuters to licensed e-hailing operators." />
+    </Helmet>
     <Hero />
     <Phase01 />
     <TechSpecs />

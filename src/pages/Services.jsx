@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const services = [
   [
     "01",
     "E-Hailing Access",
-    "Self-service kiosks designed to connect commuters to licensed e-hailing services without a smartphone, data or a bank card.",
+    "Self-service kiosks designed to connect commuters to licensed e-hailing services without a smartphone or data bundles",
   ],
   [
     "02",
@@ -121,8 +122,14 @@ const faqGroups = [
 ];
 
 export default function Services() {
+  const [openFaq, setOpenFaq] = useState(null);
+
   return (
     <main>
+      <Helmet>
+        <title>Services | RIDEBOX</title>
+        <meta name="description" content="Discover RideBox services including e-hailing access, digital advertising, and site hosting for our solar-powered kiosks." />
+      </Helmet>
       <section className="px-8 lg:px-16 py-16 lg:py-28 border-b border-white/10">
         <div className="eyebrow mb-6">WHAT WE OFFER</div>
         <h1 className="page-title">
@@ -171,8 +178,15 @@ export default function Services() {
                     <details
                       key={question}
                       className="border-b border-white/10 group"
+                      open={openFaq === question}
                     >
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-base font-bold text-white/85 [&::-webkit-details-marker]:hidden">
+                      <summary 
+                        className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-base font-bold text-white/85 [&::-webkit-details-marker]:hidden"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenFaq(openFaq === question ? null : question);
+                        }}
+                      >
                         {question}
                         <span className="text-xl font-normal text-white/40 transition-transform group-open:rotate-45">
                           +

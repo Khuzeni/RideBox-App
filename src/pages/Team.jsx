@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const people = [
   [
@@ -29,13 +30,7 @@ const people = [
     "kyle@rideboxapp.com",
     "/RideBox Team Photos/Kyle.jpeg",
   ],
-  [
-    "Siphokazi",
-    "OPERATIONS & LOGISTICS MANAGER",
-    "Qualified in Transportation and Logistics. Leads kiosk deployment strategy, supply chain and vendor management, and route optimisation across the rollout.",
-    "siphokazi@rideboxapp.com",
-    "/RideBox Team Photos/Siphokazi.jpeg",
-  ],
+
 ];
 
 const founders = [
@@ -76,6 +71,10 @@ const Portrait = ({ src, alt, contain = false }) => (
 export default function Team() {
   return (
     <main>
+      <Helmet>
+        <title>Our Team | RIDEBOX</title>
+        <meta name="description" content="Meet the team behind RideBox, building access infrastructure for licensed e-hailing services in South Africa." />
+      </Helmet>
       <section className="px-8 lg:px-16 py-16 lg:py-28 border-b border-white/10">
         <div className="eyebrow mb-6">OUR PEOPLE</div>
         <h1 className="page-title">
@@ -117,7 +116,7 @@ export default function Team() {
           {people.map(([name, role, text, email, image]) => (
             <article
               key={name}
-              className="border-b sm:border-r last:border-r-0 border-white/10"
+              className="border-b sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 border-white/10"
             >
               <Portrait src={image} alt={`${name} portrait`} />
               <div className="p-6 lg:p-8">

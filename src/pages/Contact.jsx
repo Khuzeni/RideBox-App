@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -20,6 +21,10 @@ export default function Contact() {
   };
   return (
     <main>
+      <Helmet>
+        <title>Contact Us | RIDEBOX</title>
+        <meta name="description" content="Get in touch with RideBox to host a kiosk, advertise on our screens, or integrate your e-hailing operation." />
+      </Helmet>
       <section className="px-8 lg:px-16 py-16 lg:py-28 border-b border-white/10">
         <div className="eyebrow mb-6">LET&apos;S TALK</div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">

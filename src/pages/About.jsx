@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const values = [
   {
@@ -25,6 +26,10 @@ const values = [
 
 const About = () => (
   <main>
+    <Helmet>
+      <title>About Us | RIDEBOX</title>
+      <meta name="description" content="Learn about RideBox's mission to deliver safe, affordable, and energy-independent e-hailing access to every South African." />
+    </Helmet>
     <section className="about-intro px-8 lg:px-16 py-16 lg:py-28 border-b border-white/10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
       <div className="flex flex-col">
         <div className="eyebrow mb-6">OUR STORY</div>
@@ -35,8 +40,7 @@ const About = () => (
         </h1>
         <p className="max-w-xl text-sm md:text-base leading-relaxed text-white/60">
           RideBox started from a simple observation: getting a ride in South
-          Africa quietly assumes you are carrying a smartphone, a data balance
-          and a bank card. The people who are not carrying those three things
+          Africa quietly assumes you are carrying a smartphone with data bundles loaded. The people who are not carrying those things
           are often the same people with the fewest safe alternatives when it
           gets dark. Two founders, a graduate and a final-year student at the
           Cape Peninsula University of Technology, decided to move that
