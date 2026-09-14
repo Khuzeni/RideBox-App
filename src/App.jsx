@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <Route path="/privacy" element={<Legal type="privacy" />} />
           <Route path="/terms" element={<Legal type="terms" />} />
           <Route path="/popia" element={<Legal type="popia" />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
