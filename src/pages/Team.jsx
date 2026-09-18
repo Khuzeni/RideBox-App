@@ -3,11 +3,11 @@ import { Helmet } from "react-helmet-async";
 
 const people = [
   [
-    "Reagan",
+    "Regan",
     "PROJECT MANAGER",
-    "As our dedicated Project Manager, Reagan is responsible for meticulously managing our deployment timelines and overseeing critical technical vendor partnerships to ensure timely kiosk installations.",
-    "reagan@rideboxapp.com",
-    "/RideBox Team Photos/Reagan.jpeg",
+    "As our dedicated Project Manager, Regan is responsible for meticulously managing our deployment timelines and overseeing critical technical vendor partnerships to ensure timely kiosk installations.",
+    "regan@rideboxapp.com",
+    "/RideBox Team Photos/Regan.jpeg",
   ],
   [
     "Jonathan",
